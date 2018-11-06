@@ -412,3 +412,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
+1541522292 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\main.cpp
+	<iostream>
+	<SFML/Graphics.hpp>
+
