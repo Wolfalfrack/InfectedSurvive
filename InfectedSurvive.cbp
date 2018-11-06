@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-d" />
@@ -29,6 +30,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -48,7 +50,9 @@
 		<Linker>
 			<Add directory="C:/SFML-2.5.0/lib" />
 		</Linker>
+		<Unit filename="include/Personnage.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Personnage.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
