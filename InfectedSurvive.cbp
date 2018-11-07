@@ -50,8 +50,10 @@
 		<Linker>
 			<Add directory="C:/SFML-2.5.0/lib" />
 		</Linker>
+		<Unit filename="include/Arme.h" />
 		<Unit filename="include/Personnage.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Arme.cpp" />
 		<Unit filename="src/Personnage.cpp" />
 		<Extensions>
 			<code_completion />
