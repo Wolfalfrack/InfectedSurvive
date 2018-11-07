@@ -13,7 +13,7 @@ Personnage::Personnage(int vie, int vitesse,Arme arme)
 Personnage::Personnage(const Personnage& other){
     this->vie = other.vie;
     this->vitesse = other.vitesse;
-    this->arme = other.arme
+    this->arme = other.arme;
     this->sprite = "personnage.png";
 }
 
