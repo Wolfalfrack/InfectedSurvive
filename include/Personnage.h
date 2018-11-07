@@ -3,12 +3,13 @@
 #include <string>
 #include <sstream>
 #include <iostream>
-#include "Arme.h"
+using namespace std;
+
 
 class Personnage
 {
     public:
-        Personnage(int vie, int vitesse,Arme arme);
+        Personnage(int vie, int vitesse);
         Personnage(const Personnage& other);
         bool operator==(const Personnage& other);
         virtual ~Personnage();
@@ -20,7 +21,7 @@ class Personnage
     private:
         int vie;
         int vitesse;
-        Arme arme;
+
 
         string sprite;
 };

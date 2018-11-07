@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1539793180 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\main.cpp
+1541582147 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 
@@ -430,6 +430,20 @@
 	"Arme.h"
 
 1541581272 c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\infectedsurvive\include\arme.h
+	<string>
+	<sstream>
+	<iostream>
+
+1541582147 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\src\personnage.cpp
+	"Personnage.h"
+
+1541582147 c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\include\personnage.h
+	<string>
+	<sstream>
+	<iostream>
+	"Arme.h"
+
+1541582147 c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\include\arme.h
 	<string>
 	<sstream>
 	<iostream>

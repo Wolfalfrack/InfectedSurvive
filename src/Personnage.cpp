@@ -2,18 +2,16 @@
 
 using namespace std;
 
-Personnage::Personnage(int vie, int vitesse, Arme arme)
+Personnage::Personnage(int vie, int vitesse)
 {
     this->vie = vie;
     this->vitesse = vitesse;
-    this->arme = arme;
     this->sprite = "personnage.png";
 }
 
 Personnage::Personnage(const Personnage& other){
     this->vie = other.vie;
     this->vitesse = other.vitesse;
-    this->arme = other.arme;
     this->sprite = "personnage.png";
 }
 
@@ -23,7 +21,7 @@ Personnage::~Personnage()
 }
 
 bool Personnage::operator==(const Personnage& other){
-    if(this->vie == other.vie && this->vitesse == other.vitesse && this->arme == other.arme){
+    if(this->vie == other.vie && this->vitesse == other.vitesse){
         return true;
     }
     return false;
@@ -31,6 +29,6 @@ bool Personnage::operator==(const Personnage& other){
 
 string Personnage::str()const{
     stringstream strs;
-    strs<<vie<<" "<<vitesse<<" "<<arme.str();
+    strs<<vie<<" "<<vitesse<<" "<<endl;
     return strs.str();
 }
