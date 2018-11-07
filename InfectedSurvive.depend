@@ -420,3 +420,17 @@
 	<iostream>
 	<SFML/Graphics.hpp>
 
+1541523209 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\infectedsurvive\src\personnage.cpp
+	"Personnage.h"
+
+1541523209 c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\infectedsurvive\include\personnage.h
+	<string>
+	<sstream>
+	<iostream>
+	"Arme.h"
+
+1541581272 c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\infectedsurvive\include\arme.h
+	<string>
+	<sstream>
+	<iostream>
+
