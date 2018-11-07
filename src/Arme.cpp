@@ -20,7 +20,7 @@ Arme::Arme(const Arme& other){
     this->sprite = other.sprite;
 }
 
-bool Arme::operator==(const Arme& other){
+bool Arme::operator=(const Arme& other){
     if(this->puissance == other.puissance && this->munition == other.munition && this->sprite == other.sprite){
         return true;
     }

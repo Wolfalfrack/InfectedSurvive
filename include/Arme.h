@@ -11,7 +11,7 @@ class Arme
     public:
         Arme(int puissance, int munition, string sprite);
         Arme(const Arme& other);
-        bool operator==(const Arme& other);
+        bool operator=(const Arme& other);
         virtual ~Arme();
         Arme();
 
