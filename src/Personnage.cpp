@@ -22,11 +22,13 @@ Personnage::~Personnage()
     //dtor
 }
 
-bool Personnage::operator==(const Personnage& other){
-    if(this->vie == other.vie && this->vitesse == other.vitesse && this->arme ==other.arme){
-        return true;
-    }
-    return false;
+Personnage& Personnage::operator=(const Personnage& other){
+    if(this==&other)return *this;
+    this->vie = other.vie;
+    this->vitesse = other.vitesse;
+    this->arme = other.arme;
+    this->sprite = "personnage.png";
+    return *this;
 }
 
 string Personnage::str()const{

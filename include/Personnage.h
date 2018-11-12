@@ -12,7 +12,7 @@ class Personnage
     public:
         Personnage(int vie, int vitesse,Arme arme);
         Personnage(const Personnage& other);
-        bool operator==(const Personnage& other);
+        Personnage& operator=(const Personnage& other);
         virtual ~Personnage();
 
         string str()const;

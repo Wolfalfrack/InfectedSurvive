@@ -52,9 +52,11 @@
 		</Linker>
 		<Unit filename="include/Arme.h" />
 		<Unit filename="include/Personnage.h" />
+		<Unit filename="include/Zombie.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Arme.cpp" />
 		<Unit filename="src/Personnage.cpp" />
+		<Unit filename="src/Zombie.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

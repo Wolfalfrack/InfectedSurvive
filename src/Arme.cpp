@@ -20,11 +20,12 @@ Arme::Arme(const Arme& other){
     this->sprite = other.sprite;
 }
 
-bool Arme::operator=(const Arme& other){
-    if(this->puissance == other.puissance && this->munition == other.munition && this->sprite == other.sprite){
-        return true;
-    }
-    return false;
+Arme& Arme::operator=(const Arme& other){µ
+    if(this == &other)return *this;
+    this->puissance = other.puissance;
+    this->munition = other.munition;
+    this->sprite = other.sprite;
+    return *this;
 }
 
 Arme::~Arme()
