@@ -1,11 +1,19 @@
-#include <stdexcept>
-#include <iostream>
-#include "Application.h"
-using namespace std;
+#include "MainMenu.h"
+#include <SFML/Graphics.hpp>
 
-int main()
+MainMenu::MainMenu()
 {
-    /*sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    //ctor
+}
+
+MainMenu::~MainMenu()
+{
+    //dtor
+}
+
+void MainMenu::draw()
+{
+    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
@@ -22,15 +30,4 @@ int main()
         window.draw(shape);
         window.display();
     }
-
-    return 0;*/
-
-    try
-    {
-        Application app;
-        app.run();
-    }catch (std::exception& e)
-	{
-		std::cout << "\nEXCEPTION: " << e.what() << std::endl;
-	}
 }
