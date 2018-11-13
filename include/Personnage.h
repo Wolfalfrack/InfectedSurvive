@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <SFML/Graphics.hpp>
 #include "Arme.h"
 using namespace std;
 
@@ -20,7 +21,6 @@ class Personnage
         int getVie();
         int getVitesse();
         Arme getArme();
-        string getSprite();
 
         void deplacementClavier();
 
@@ -30,9 +30,6 @@ class Personnage
         int vie;
         int vitesse;
         Arme arme;
-
-
-        string sprite;
 };
 
 #endif // PERSONNAGE_H

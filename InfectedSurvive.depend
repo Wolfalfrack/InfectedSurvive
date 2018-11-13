@@ -460,13 +460,14 @@
 
 1542030305 D
 
-1542105983 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\personnage.cpp
+1542107896 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\personnage.cpp
 	"Personnage.h"
 
-1542105882 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\personnage.h
+1542107762 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\personnage.h
 	<string>
 	<sstream>
 	<iostream>
+	<SFML/Graphics.hpp>
 	"Arme.h"
 
 1542029535 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\arme.h
@@ -504,9 +505,10 @@
 1542034107 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\application.h
 	"MainMenu.h"
 
-1542105726 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\mainmenu.h
+1542108083 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\mainmenu.h
 	<SFML/Graphics.hpp>
-	"DeplacementPersonnage.h"
+	"Personnage.h"
+	"Arme.h"
 
 1542034107 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\application.cpp
 	"Application.h"
@@ -517,7 +519,7 @@
 1542105615 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\mainmenu.cpp
 	"MainMenu.h"
 
-1542106454 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\deplacementpersonnage.h
+1542106535 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\deplacementpersonnage.h
 	<SFML/Graphics.hpp>
 	"Personnage.h"
 	"MainMenu.h"

@@ -7,14 +7,12 @@ Personnage::Personnage(int vie, int vitesse,Arme arme)
     this->vie = vie;
     this->vitesse = vitesse;
     this->arme = arme;
-    this->sprite = "personnage.png";
 }
 
 Personnage::Personnage(const Personnage& other){
     this->vie = other.vie;
     this->vitesse = other.vitesse;
     this->arme = other.arme;
-    this->sprite = "personnage.png";
 }
 
 Personnage::~Personnage()
@@ -27,7 +25,6 @@ Personnage& Personnage::operator=(const Personnage& other){
     this->vie = other.vie;
     this->vitesse = other.vitesse;
     this->arme = other.arme;
-    this->sprite = "personnage.png";
     return *this;
 }
 
@@ -52,27 +49,28 @@ Arme Personnage::getArme()
     return arme;
 }
 
-string Personnage::getSprite()
+void Personnage::deplacementClavier()
 {
-    return sprite;
-}
-
-void deplacementClavier()
-{
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-    {
-        personnage.getSprite().move(0,-personnage.getVitesse());
+    sf::Texture texturePerso;
+    if(!texturePerso.loadFromFile("spritePerso.png")){
+            cout<<"Error loading sprite";
     }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-    {
-        personnage.getSprite().move(0,personnage.getVitesse());
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-    {
-        personnage.getSprite().move(-personnage.getVitesse(),0);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-    {
-        personnage.getSprite().move(personnage.getVitesse(),0);
-    }
+//    sf::Sprite spritePerso;
+//    spr.setImage(ImageManager.GetImage()));
+//    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+//    {
+//        spr.move(0,-getVitesse());
+//    }
+//    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+//    {
+//        spr.move(0,getVitesse()));
+//    }
+//    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+//    {
+//        spr.move(-getVitesse(),0);
+//    }
+//    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+//    {
+//       spr.move(getVitesse(),0);
+//    }
 }

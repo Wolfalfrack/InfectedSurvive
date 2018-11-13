@@ -25,6 +25,10 @@ void MainMenu::draw()
                 window.close();
         }
 
+        Arme arme(10,50,"sprite.png");
+        Personnage personnage(10,10,arme);
+        personnage.deplacementClavier();
+
         window.clear();
         window.draw(shape);
         window.display();
