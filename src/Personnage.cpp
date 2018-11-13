@@ -88,8 +88,8 @@ void Personnage::deplacementClavier()
     }
 
     anim.x++;
-    if(anim.x * 64  >= texturePerso.getSize().x){
+    if(anim.x * 32  >= texturePerso.getSize().x){
         anim.x = 0;
     }
-    spritePerso.setTextureRect(IntRect(anim.x * 64, anim.y * 64,64,64));
+    spritePerso.setTextureRect(IntRect(anim.x * 0, anim.y * 64,64,64));
 }
