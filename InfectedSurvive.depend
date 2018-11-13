@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1542033303 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\main.cpp
+1542103775 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\main.cpp
 	<stdexcept>
 	<iostream>
 	"Application.h"
@@ -457,7 +457,8 @@
 	<sstream>
 	<iostream>
 
-<<<<<<< HEAD
+1542030305 D
+
 1542029948 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\personnage.cpp
 	"Personnage.h"
 
@@ -479,7 +480,9 @@
 	<string>
 	<sstream>
 	<iostream>
-=======
+
+1542030136 
+
 1542030808 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\src\arme.cpp
 	"Arme.h"
 
@@ -488,10 +491,12 @@
 
 1542033573 c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\include\mainmenu.h
 
-1542033347 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\src\mainmenu.cpp
+1542105002 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\src\mainmenu.cpp
 	"MainMenu.h"
+	<SFML/Graphics.hpp>
 
 1542033555 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\src\application.cpp
 	"Application.h"
->>>>>>> master
+
+1542033555 ter
 
