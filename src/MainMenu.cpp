@@ -16,6 +16,8 @@ void MainMenu::draw()
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
+    Arme arme(10,50,"sprite.png");
+    Personnage personnage(10,10,arme);
     while (window.isOpen())
     {
         sf::Event event;
@@ -25,13 +27,12 @@ void MainMenu::draw()
                 window.close();
         }
 
-        Arme arme(10,50,"sprite.png");
-        Personnage personnage(10,10,arme);
         personnage.deplacementClavier();
 
-        window.clear();
+
         window.draw(personnage.getSpritePerso());
         window.display();
+        window.clear();
     }
 
 }
