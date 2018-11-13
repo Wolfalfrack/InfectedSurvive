@@ -13,8 +13,8 @@ MainMenu::~MainMenu()
 void MainMenu::draw()
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "InfectedSurvive");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+//    sf::CircleShape shape(100.f);
+//    shape.setFillColor(sf::Color::Green);
 
     while (window.isOpen())
     {
@@ -30,7 +30,7 @@ void MainMenu::draw()
         personnage.deplacementClavier();
 
         window.clear();
-        window.draw(shape);
+        window.draw(personnage.getSpritePerso());
         window.display();
     }
 

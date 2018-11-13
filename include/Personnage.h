@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include "Arme.h"
 using namespace std;
+using namespace sf;
 
 
 class Personnage
@@ -21,6 +22,7 @@ class Personnage
         int getVie();
         int getVitesse();
         Arme getArme();
+        Sprite getSpritePerso();
 
         void deplacementClavier();
 
@@ -30,6 +32,8 @@ class Personnage
         int vie;
         int vitesse;
         Arme arme;
+        Texture texturePerso;
+        Sprite spritePerso;
 };
 
 #endif // PERSONNAGE_H
