@@ -36,3 +36,43 @@ string Personnage::str()const{
     strs<<vie<<" "<<vitesse<<" "<<arme.str();
     return strs.str();
 }
+
+int Personnage::getVie()
+{
+    return vie;
+}
+
+int Personnage::getVitesse()
+{
+    return vitesse;
+}
+
+Arme Personnage::getArme()
+{
+    return arme;
+}
+
+string Personnage::getSprite()
+{
+    return sprite;
+}
+
+void deplacementClavier()
+{
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+    {
+        personnage.getSprite().move(0,-personnage.getVitesse());
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    {
+        personnage.getSprite().move(0,personnage.getVitesse());
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+    {
+        personnage.getSprite().move(-personnage.getVitesse(),0);
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    {
+        personnage.getSprite().move(personnage.getVitesse(),0);
+    }
+}

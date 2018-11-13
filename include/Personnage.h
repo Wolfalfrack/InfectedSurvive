@@ -17,6 +17,13 @@ class Personnage
 
         string str()const;
 
+        int getVie();
+        int getVitesse();
+        Arme getArme();
+        string getSprite();
+
+        void deplacementClavier();
+
     protected:
 
     private:
