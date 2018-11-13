@@ -1,5 +1,4 @@
 #include "MainMenu.h"
-#include <SFML/Graphics.hpp>
 
 MainMenu::MainMenu()
 {
@@ -25,22 +24,6 @@ void MainMenu::draw()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-    {
-        shape.move(0,-1);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-    {
-        shape.move(0,1);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-    {
-        shape.move(-1,0);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-    {
-        shape.move(1,0);
-    }
 
         window.clear();
         window.draw(shape);
