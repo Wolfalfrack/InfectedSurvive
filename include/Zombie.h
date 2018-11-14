@@ -3,8 +3,10 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 using namespace std;
+using namespace sf;
 
 class Zombie
 {
@@ -14,7 +16,15 @@ class Zombie
         Zombie& operator=(const Zombie& other);
         virtual ~Zombie();
 
+        void deplacementAleatoire();
+
         string str()const;
+
+        int getVie();
+        int getVitesse();
+        int getPuissance();
+        Texture getTextureZombie();
+        Sprite getSpriteZombie();
 
     protected:
 
@@ -22,6 +32,8 @@ class Zombie
         int vie;
         int vitesse;
         int puissance;
+        Texture textureZombie;
+        Sprite spriteZombie;
 };
 
 #endif // ZOMBIE_H

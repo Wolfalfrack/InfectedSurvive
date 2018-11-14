@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Personnage.h"
 #include "Arme.h"
+#include "Zombie.h"
 
 class MainMenu
 {

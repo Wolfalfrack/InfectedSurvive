@@ -70,22 +70,22 @@ void Personnage::deplacementClavier()
     enum Dir{Up, Left, Down, Right};
     Vector2i anim(1, Down);
 
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+    if(Keyboard::isKeyPressed(Keyboard::Z))
     {
         anim.y = Up;
         spritePerso.move(0,-vitesse);
     }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    if(Keyboard::isKeyPressed(Keyboard::S))
     {
         anim.y = Down;
         spritePerso.move(0,vitesse);
     }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+    if(Keyboard::isKeyPressed(Keyboard::Q))
     {
         anim.y = Left;
         spritePerso.move(-vitesse,0);
     }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    if(Keyboard::isKeyPressed(Keyboard::D))
     {
         anim.y = Right;
         spritePerso.move(vitesse,0);

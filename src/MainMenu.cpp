@@ -18,6 +18,7 @@ void MainMenu::draw()
 
     Arme arme(10,50,"sprite.png");
     Personnage personnage(10,1,arme);
+    Zombie zombie(10,1,10);
     while (window.isOpen())
     {
         sf::Event event;
@@ -28,9 +29,11 @@ void MainMenu::draw()
         }
 
         personnage.deplacementClavier();
+        zombie.deplacementAleatoire();
 
 
         window.draw(personnage.getSpritePerso());
+        window.draw(zombie.getSpriteZombie());
         window.display();
         window.clear();
     }
