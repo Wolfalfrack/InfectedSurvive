@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <cmath>
 #include "Arme.h"
 using namespace std;
 using namespace sf;
@@ -23,6 +24,7 @@ class Personnage
         int getVitesse();
         Arme getArme();
         Sprite getSpritePerso();
+        Texture getTexturePerso();
 
         void deplacementClavier();
 

@@ -60,9 +60,13 @@ Sprite Personnage::getSpritePerso()
     return spritePerso;
 }
 
+Texture Personnage::getTexturePerso()
+{
+    return texturePerso;
+}
+
 void Personnage::deplacementClavier()
 {
-
     enum Dir{Up, Left, Down, Right};
     Vector2i anim(1, Down);
 
@@ -84,12 +88,24 @@ void Personnage::deplacementClavier()
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
         anim.y = Right;
-       spritePerso.move(vitesse,0);
+        spritePerso.move(vitesse,0);
     }
 
+    if(spritePerso.getPosition().x <=0)
+        spritePerso.setPosition(Vector2f(0, spritePerso.getPosition().y));
+    if(spritePerso.getPosition().y <=0)
+        spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,0));
+    if(spritePerso.getPosition().y >=720)
+        spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,720));
+    if(spritePerso.getPosition().x >=1220)
+        spritePerso.setPosition(Vector2f(1220, spritePerso.getPosition().y));
+
+
     anim.x++;
-    if(anim.x * 32  >= texturePerso.getSize().x){
+    if(anim.x * 64  >= texturePerso.getSize().x){
         anim.x = 0;
     }
+
+
     spritePerso.setTextureRect(IntRect(anim.x * 0, anim.y * 64,64,64));
 }

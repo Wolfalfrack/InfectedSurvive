@@ -12,12 +12,12 @@ MainMenu::~MainMenu()
 
 void MainMenu::draw()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "InfectedSurvive");
+    sf::RenderWindow window(sf::VideoMode(1300, 800), "InfectedSurvive");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
     Arme arme(10,50,"sprite.png");
-    Personnage personnage(10,10,arme);
+    Personnage personnage(10,1,arme);
     while (window.isOpen())
     {
         sf::Event event;
