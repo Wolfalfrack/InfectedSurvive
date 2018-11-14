@@ -95,10 +95,10 @@ void Personnage::deplacementClavier()
         spritePerso.setPosition(Vector2f(0, spritePerso.getPosition().y));
     if(spritePerso.getPosition().y <=0)
         spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,0));
-    if(spritePerso.getPosition().y >=720)
-        spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,720));
-    if(spritePerso.getPosition().x >=1220)
-        spritePerso.setPosition(Vector2f(1220, spritePerso.getPosition().y));
+    if(spritePerso.getPosition().y >=570)
+        spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,570));
+    if(spritePerso.getPosition().x >=1230)
+        spritePerso.setPosition(Vector2f(1230, spritePerso.getPosition().y));
 
 
     anim.x++;

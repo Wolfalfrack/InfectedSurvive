@@ -12,7 +12,7 @@ MainMenu::~MainMenu()
 
 void MainMenu::draw()
 {
-    sf::RenderWindow window(sf::VideoMode(1300, 800), "InfectedSurvive");
+    sf::RenderWindow window(sf::VideoMode(1300, 650), "InfectedSurvive");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
