@@ -1,6 +1,7 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 #include "Personnage.h"
 #include "Arme.h"
 #include "Zombie.h"

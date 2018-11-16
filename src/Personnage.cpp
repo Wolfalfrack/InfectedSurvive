@@ -13,6 +13,8 @@ Personnage::Personnage(int vie, int vitesse,Arme arme)
     }
     texturePerso.setSmooth(true);
     spritePerso.setTexture(texturePerso);
+
+    spritePerso.setPosition(Vector2f(1230/2,570/2));
 }
 
 Personnage::Personnage(const Personnage& other){
