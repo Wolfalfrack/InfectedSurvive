@@ -13,12 +13,13 @@ MainMenu::~MainMenu()
 void MainMenu::draw()
 {
     sf::RenderWindow window(sf::VideoMode(1300, 650), "InfectedSurvive");
+    window.setFramerateLimit(60);
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
     Arme arme(10,50,"sprite.png");
-    Personnage personnage(10,1,arme);
-    Zombie zombie(10,1,10);
+    Personnage personnage(10,5,arme);
+    Zombie zombie(10,3,10);
     Map map;
     while (window.isOpen())
     {
@@ -31,7 +32,7 @@ void MainMenu::draw()
 
         personnage.deplacementClavier();
 
-//        zombie.deplacementAleatoire(personnage);
+       zombie.deplacementAleatoire(personnage);
 
         window.draw(map.getSpriteMap());
         window.draw(personnage.getSpritePerso());
