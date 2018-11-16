@@ -19,7 +19,7 @@ void MainMenu::draw()
     Arme arme(10,50,"sprite.png");
     Personnage personnage(10,1,arme);
     Zombie zombie(10,1,10);
-    Map map1;
+    Map map;
     while (window.isOpen())
     {
         sf::Event event;
@@ -34,7 +34,7 @@ void MainMenu::draw()
         zombie.deplacementAleatoire(personnage);
 
 
-        window.draw(map1.getSpriteMap());
+        window.draw(map.getSpriteMap());
         window.draw(personnage.getSpritePerso());
         window.draw(zombie.getSpriteZombie());
 
