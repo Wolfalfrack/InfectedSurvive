@@ -4,7 +4,12 @@
 #include "Personnage.h"
 #include "Arme.h"
 #include "Zombie.h"
+<<<<<<< Updated upstream
 #include "Map.h"
+=======
+#include <thread>
+#include <iostream>
+>>>>>>> Stashed changes
 
 class MainMenu
 {

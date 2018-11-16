@@ -30,6 +30,7 @@ void MainMenu::draw()
         }
 
         personnage.deplacementClavier();
+
         zombie.deplacementAleatoire(personnage);
 
 

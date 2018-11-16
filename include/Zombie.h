@@ -4,6 +4,8 @@
 #include <sstream>
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <cstdlib>
+#include <ctime>
 #include "Personnage.h"
 
 using namespace std;

@@ -9,12 +9,14 @@ Zombie::Zombie(int vie, int vitesse, int puissance)
     if(!textureZombie.loadFromFile("zombie.png")){
         cout<<"Error loading sprite";
     }
+    srand(time(NULL));
+
     textureZombie.setSmooth(true);
     spriteZombie.setTexture(textureZombie);
 
 
 
-    sprite zombie.setPosition().x
+    spriteZombie.setPosition(Vector2f(rand()%1230,rand()%570));
 }
 
 Zombie::Zombie(const Zombie& other){
@@ -74,22 +76,22 @@ void Zombie::deplacementAleatoire(Personnage personnage)
     Vector2i anim(1, Down);
 
 
-    while(personnage.getSpritePerso().getPosition().y > spriteZombie.getPosition().y)
+    if(personnage.getSpritePerso().getPosition().y < spriteZombie.getPosition().y)
     {
         anim.y = Up;
         spriteZombie.move(0,-vitesse);
     }
-    while(personnage.getSpritePerso().getPosition().y < spriteZombie.getPosition().y)
+    if(personnage.getSpritePerso().getPosition().y > spriteZombie.getPosition().y)
     {
         anim.y = Down;
         spriteZombie.move(0,vitesse);
     }
-    while(personnage.getSpritePerso().getPosition().x > spriteZombie.getPosition().x)
+    if(personnage.getSpritePerso().getPosition().x < spriteZombie.getPosition().x)
     {
         anim.y = Left;
         spriteZombie.move(-vitesse,0);
     }
-    while(personnage.getSpritePerso().getPosition().x > spriteZombie.getPosition().x)
+    if(personnage.getSpritePerso().getPosition().x > spriteZombie.getPosition().x)
     {
         anim.y = Right;
         spriteZombie.move(vitesse,0);
