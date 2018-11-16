@@ -53,12 +53,14 @@
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/Arme.h" />
 		<Unit filename="include/MainMenu.h" />
+		<Unit filename="include/Map.h" />
 		<Unit filename="include/Personnage.h" />
 		<Unit filename="include/Zombie.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Arme.cpp" />
 		<Unit filename="src/MainMenu.cpp" />
+		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/Personnage.cpp" />
 		<Unit filename="src/Zombie.cpp" />
 		<Extensions>

@@ -4,6 +4,7 @@
 #include "Personnage.h"
 #include "Arme.h"
 #include "Zombie.h"
+#include "Map.h"
 
 class MainMenu
 {
