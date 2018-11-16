@@ -17,7 +17,7 @@ class Zombie
         Zombie& operator=(const Zombie& other);
         virtual ~Zombie();
 
-        void deplacementAleatoire();
+        void deplacementAleatoire(Personnage personnage);
 
         string str()const;
 

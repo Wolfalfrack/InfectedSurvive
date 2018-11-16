@@ -11,6 +11,10 @@ Zombie::Zombie(int vie, int vitesse, int puissance)
     }
     textureZombie.setSmooth(true);
     spriteZombie.setTexture(textureZombie);
+
+
+
+    sprite zombie.setPosition().x
 }
 
 Zombie::Zombie(const Zombie& other){
@@ -69,22 +73,23 @@ void Zombie::deplacementAleatoire(Personnage personnage)
     enum Dir{Down, Left, Right, Up};
     Vector2i anim(1, Down);
 
-    if(Keyboard::isKeyPressed(Keyboard::Up))
+
+    while(personnage.getSpritePerso().getPosition().y > spriteZombie.getPosition().y)
     {
         anim.y = Up;
         spriteZombie.move(0,-vitesse);
     }
-    if(Keyboard::isKeyPressed(Keyboard::Down))
+    while(personnage.getSpritePerso().getPosition().y < spriteZombie.getPosition().y)
     {
         anim.y = Down;
         spriteZombie.move(0,vitesse);
     }
-    if(Keyboard::isKeyPressed(Keyboard::Left))
+    while(personnage.getSpritePerso().getPosition().x > spriteZombie.getPosition().x)
     {
         anim.y = Left;
         spriteZombie.move(-vitesse,0);
     }
-    if(Keyboard::isKeyPressed(Keyboard::Right))
+    while(personnage.getSpritePerso().getPosition().x > spriteZombie.getPosition().x)
     {
         anim.y = Right;
         spriteZombie.move(vitesse,0);
@@ -102,7 +107,7 @@ void Zombie::deplacementAleatoire(Personnage personnage)
 
     anim.x ++;
     if(anim.x * 16  >= textureZombie.getSize().x){
-        anim.x = 0;
+        anim.x = 64;
     }
 
     // X = 16 / 64 / 112 / 160 = sprite 1 / 2 / 3 / 4

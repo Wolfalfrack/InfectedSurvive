@@ -31,11 +31,12 @@ void MainMenu::draw()
         personnage.deplacementClavier();
         zombie.deplacementAleatoire(personnage);
 
-
         window.draw(personnage.getSpritePerso());
         window.draw(zombie.getSpriteZombie());
         window.display();
         window.clear();
+
+
     }
 
 }
