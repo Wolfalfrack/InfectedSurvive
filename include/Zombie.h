@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include <cstdlib>
 #include <ctime>
+#include <cmath>
 #include "Personnage.h"
 
 using namespace std;
@@ -20,7 +21,8 @@ class Zombie
         virtual ~Zombie();
 
         void deplacementAleatoire(Personnage& personnage);
-        void attaque(Personnage& personnage);
+        bool attaque(Personnage& personnage);
+        int randomSprite();
 
         string str()const;
 
@@ -38,6 +40,7 @@ class Zombie
         int puissance;
         Texture textureZombie;
         Sprite spriteZombie;
+        int numSprite;
 };
 
 #endif // ZOMBIE_H

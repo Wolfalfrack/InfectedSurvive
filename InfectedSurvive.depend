@@ -466,7 +466,7 @@
 
 1542030305 D
 
-1542706765 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\personnage.cpp
+1542706938 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\personnage.cpp
 	"Personnage.h"
 
 1542705919 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\personnage.h
@@ -482,16 +482,17 @@
 	<sstream>
 	<iostream>
 
-1542706712 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\zombie.cpp
+1542712126 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\zombie.cpp
 	"Zombie.h"
 
-1542705758 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\zombie.h
+1542711429 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\zombie.h
 	<string>
 	<sstream>
 	<iostream>
 	<SFML/Graphics.hpp>
 	<cstdlib>
 	<ctime>
+	<cmath>
 	"Personnage.h"
 
 1542030136 
@@ -539,7 +540,7 @@
 1542034102 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\arme.cpp
 	"Arme.h"
 
-1542706798 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\mainmenu.cpp
+1542710879 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\mainmenu.cpp
 	"MainMenu.h"
 
 1542106535 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\deplacementpersonnage.h

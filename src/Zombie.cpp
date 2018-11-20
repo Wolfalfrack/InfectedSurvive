@@ -14,8 +14,6 @@ Zombie::Zombie(int vie, int vitesse, int puissance)
     textureZombie.setSmooth(true);
     spriteZombie.setTexture(textureZombie);
 
-
-
     spriteZombie.setPosition(Vector2f(rand()%1230,rand()%570));
 }
 
@@ -76,26 +74,29 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
     Vector2i anim(1, Down);
 
 
-    if(personnage.getSpritePerso().getPosition().y+20 < spriteZombie.getPosition().y)
-    {
-        anim.y = Up;
-        spriteZombie.move(0,-vitesse);
+    if(!attaque(personnage)){
+        if(personnage.getSpritePerso().getPosition().x+32 < spriteZombie.getPosition().x+16)
+        {
+            anim.y = Left;
+            spriteZombie.move(-vitesse,0);
+        }
+        if(personnage.getSpritePerso().getPosition().x+32 > spriteZombie.getPosition().x+16)
+        {
+            anim.y = Right;
+            spriteZombie.move(vitesse,0);
+        }
+        if(personnage.getSpritePerso().getPosition().y+32 < spriteZombie.getPosition().y+16)
+        {
+            anim.y = Up;
+            spriteZombie.move(0,-vitesse);
+        }
+        if(personnage.getSpritePerso().getPosition().y +32> spriteZombie.getPosition().y+16)
+        {
+            anim.y = Down;
+            spriteZombie.move(0,vitesse);
+        }
     }
-    if(personnage.getSpritePerso().getPosition().y+20 > spriteZombie.getPosition().y)
-    {
-        anim.y = Down;
-        spriteZombie.move(0,vitesse);
-    }
-    if(personnage.getSpritePerso().getPosition().x+10 < spriteZombie.getPosition().x)
-    {
-        anim.y = Left;
-        spriteZombie.move(-vitesse,0);
-    }
-    if(personnage.getSpritePerso().getPosition().x+10 > spriteZombie.getPosition().x)
-    {
-        anim.y = Right;
-        spriteZombie.move(vitesse,0);
-    }
+
 
     if(spriteZombie.getPosition().x <=0)
         spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
@@ -105,7 +106,6 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
         spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,570));
     if(spriteZombie.getPosition().x >=1230)
         spriteZombie.setPosition(Vector2f(1230, spriteZombie.getPosition().y));
-
 
     anim.x ++;
     if(anim.x * 16  >= textureZombie.getSize().x){
@@ -117,14 +117,13 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
     spriteZombie.setTextureRect(IntRect(anim.x * 16, anim.y * 32,34,32));
 }
 
-void Zombie::attaque(Personnage& personnage)
+bool Zombie::attaque(Personnage& personnage)
 {
-    if(abs(personnage.getSpritePerso().getPosition().x+10 - spriteZombie.getPosition().x) == 10){
-        personnage.setVie(personnage.getVie() - puissance);
-        cout<<personnage.getVie()<<endl;
+    if((abs((personnage.getSpritePerso().getPosition().x + 32) - (spriteZombie.getPosition().x + 16)) < 32)&&(abs((personnage.getSpritePerso().getPosition().y + 64) - (spriteZombie.getPosition().y + 16)) < 32))
+    {
+        personnage.setVie(personnage.getVie()-puissance);
+        cout<<personnage.getVie();
+        return true;
     }
-    if(abs(personnage.getSpritePerso().getPosition().y+20 - spriteZombie.getPosition().y) == 10){
-        personnage.setVie(personnage.getVie() - puissance);
-        cout<<personnage.getVie()<<endl;
-    }
+    return false;
 }
