@@ -76,22 +76,22 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
     Vector2i anim(1, Down);
 
 
-    if(personnage.getSpritePerso().getPosition().y < spriteZombie.getPosition().y)
+    if(personnage.getSpritePerso().getPosition().y+20 < spriteZombie.getPosition().y)
     {
         anim.y = Up;
         spriteZombie.move(0,-vitesse);
     }
-    if(personnage.getSpritePerso().getPosition().y > spriteZombie.getPosition().y)
+    if(personnage.getSpritePerso().getPosition().y+20 > spriteZombie.getPosition().y)
     {
         anim.y = Down;
         spriteZombie.move(0,vitesse);
     }
-    if(personnage.getSpritePerso().getPosition().x < spriteZombie.getPosition().x)
+    if(personnage.getSpritePerso().getPosition().x+10 < spriteZombie.getPosition().x)
     {
         anim.y = Left;
         spriteZombie.move(-vitesse,0);
     }
-    if(personnage.getSpritePerso().getPosition().x > spriteZombie.getPosition().x)
+    if(personnage.getSpritePerso().getPosition().x+10 > spriteZombie.getPosition().x)
     {
         anim.y = Right;
         spriteZombie.move(vitesse,0);
@@ -119,11 +119,11 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
 
 void Zombie::attaque(Personnage& personnage)
 {
-    if(abs(personnage.getSpritePerso().getPosition().x - spriteZombie.getPosition().x) == 10){
+    if(abs(personnage.getSpritePerso().getPosition().x+10 - spriteZombie.getPosition().x) == 10){
         personnage.setVie(personnage.getVie() - puissance);
         cout<<personnage.getVie()<<endl;
     }
-    if(abs(personnage.getSpritePerso().getPosition().y - spriteZombie.getPosition().y) == 10){
+    if(abs(personnage.getSpritePerso().getPosition().y+20 - spriteZombie.getPosition().y) == 10){
         personnage.setVie(personnage.getVie() - puissance);
         cout<<personnage.getVie()<<endl;
     }
