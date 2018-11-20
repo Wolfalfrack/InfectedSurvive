@@ -85,12 +85,12 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
             anim.y = Right;
             spriteZombie.move(vitesse,0);
         }
-        if(personnage.getSpritePerso().getPosition().y+32 < spriteZombie.getPosition().y+16)
+        if(personnage.getSpritePerso().getPosition().y+80 < spriteZombie.getPosition().y+16)
         {
             anim.y = Up;
             spriteZombie.move(0,-vitesse);
         }
-        if(personnage.getSpritePerso().getPosition().y +32> spriteZombie.getPosition().y+16)
+        if(personnage.getSpritePerso().getPosition().y> spriteZombie.getPosition().y+16)
         {
             anim.y = Down;
             spriteZombie.move(0,vitesse);
@@ -100,11 +100,11 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
 
     if(spriteZombie.getPosition().x <=0)
         spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
-    if(spriteZombie.getPosition().y <=0)
+    else if(spriteZombie.getPosition().y <=0)
         spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,0));
-    if(spriteZombie.getPosition().y >=570)
+    else if(spriteZombie.getPosition().y >=570)
         spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,570));
-    if(spriteZombie.getPosition().x >=1230)
+    else if(spriteZombie.getPosition().x >=1230)
         spriteZombie.setPosition(Vector2f(1230, spriteZombie.getPosition().y));
 
     anim.x ++;
@@ -119,7 +119,7 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
 
 bool Zombie::attaque(Personnage& personnage)
 {
-    if((abs((personnage.getSpritePerso().getPosition().x + 32) - (spriteZombie.getPosition().x + 16)) < 32)&&(abs((personnage.getSpritePerso().getPosition().y + 64) - (spriteZombie.getPosition().y + 16)) < 32))
+    if((abs((personnage.getSpritePerso().getPosition().x + 32) - (spriteZombie.getPosition().x + 16)) < 32)&&(abs((personnage.getSpritePerso().getPosition().y + 32) - (spriteZombie.getPosition().y + 16)) < 32))
     {
         personnage.setVie(personnage.getVie()-puissance);
         cout<<personnage.getVie();
