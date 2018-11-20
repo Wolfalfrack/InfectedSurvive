@@ -85,7 +85,7 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
             anim.y = Right;
             spriteZombie.move(vitesse,0);
         }
-        if(personnage.getSpritePerso().getPosition().y+80 < spriteZombie.getPosition().y+16)
+        if(personnage.getSpritePerso().getPosition().y+64 < spriteZombie.getPosition().y+16)
         {
             anim.y = Up;
             spriteZombie.move(0,-vitesse);

@@ -35,6 +35,8 @@ void MainMenu::draw()
         zombie.deplacementAleatoire(personnage);
 
 
+
+
         window.draw(map.getSpriteMap());
         window.draw(personnage.getSpritePerso());
         window.draw(zombie.getSpriteZombie());
