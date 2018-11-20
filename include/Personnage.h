@@ -21,12 +21,14 @@ class Personnage
         string str()const;
 
         int getVie();
+        void setVie(int vie);
         int getVitesse();
         Arme getArme();
         Sprite getSpritePerso();
         Texture getTexturePerso();
 
         void deplacementClavier();
+//        void attaque(Zombie& zombie);
 
     protected:
 

@@ -18,8 +18,8 @@ void MainMenu::draw()
     shape.setFillColor(sf::Color::Green);
 
     Arme arme(10,50,"sprite.png");
-    Personnage personnage(10,5,arme);
-    Zombie zombie(10,3,10);
+    Personnage personnage(100,11,arme);
+    Zombie zombie(10,10,10);
     Map map;
     while (window.isOpen())
     {
@@ -33,12 +33,17 @@ void MainMenu::draw()
         personnage.deplacementClavier();
 
         zombie.deplacementAleatoire(personnage);
+        zombie.attaque(personnage);
+
 
         window.draw(map.getSpriteMap());
         window.draw(personnage.getSpritePerso());
         window.draw(zombie.getSpriteZombie());
 
-
+        if(personnage.getVie()<=0){
+            window.clear();
+            window.draw(map.getSpriteMap());
+        }
 
         window.display();
         window.clear();

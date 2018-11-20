@@ -20,6 +20,7 @@ class Zombie
         virtual ~Zombie();
 
         void deplacementAleatoire(Personnage& personnage);
+        void attaque(Personnage& personnage);
 
         string str()const;
 

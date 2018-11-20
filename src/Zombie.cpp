@@ -115,5 +115,16 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
     // X = 16 / 64 / 112 / 160 = sprite 1 / 2 / 3 / 4
 
     spriteZombie.setTextureRect(IntRect(anim.x * 16, anim.y * 32,34,32));
+}
 
+void Zombie::attaque(Personnage& personnage)
+{
+    if(abs(personnage.getSpritePerso().getPosition().x - spriteZombie.getPosition().x) == 10){
+        personnage.setVie(personnage.getVie() - puissance);
+        cout<<personnage.getVie()<<endl;
+    }
+    if(abs(personnage.getSpritePerso().getPosition().y - spriteZombie.getPosition().y) == 10){
+        personnage.setVie(personnage.getVie() - puissance);
+        cout<<personnage.getVie()<<endl;
+    }
 }
