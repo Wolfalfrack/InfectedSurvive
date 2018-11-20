@@ -16,6 +16,7 @@ class MainMenu
         MainMenu();
         virtual ~MainMenu();
         void draw();
+        void func();
 
     protected:
 

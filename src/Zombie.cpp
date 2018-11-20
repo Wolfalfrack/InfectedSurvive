@@ -69,7 +69,7 @@ string Zombie::str()const{
     return strs.str();
 }
 
-void Zombie::deplacementAleatoire(Personnage personnage)
+void Zombie::deplacementAleatoire(Personnage& personnage)
 {
 
     enum Dir{Down, Left, Right, Up};

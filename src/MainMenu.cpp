@@ -32,7 +32,7 @@ void MainMenu::draw()
 
         personnage.deplacementClavier();
 
-       zombie.deplacementAleatoire(personnage);
+        zombie.deplacementAleatoire(personnage);
 
         window.draw(map.getSpriteMap());
         window.draw(personnage.getSpritePerso());
