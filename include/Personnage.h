@@ -28,7 +28,7 @@ class Personnage
         Texture getTexturePerso();
 
         void deplacementClavier();
-//        void attaque(Zombie& zombie);
+        void attaque();
 
     protected:
 

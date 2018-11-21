@@ -117,7 +117,7 @@ void Personnage::deplacementClavier()
     spritePerso.setTextureRect(IntRect(anim.x * 0, anim.y * 64,64,64));
 }
 
-//void Personnage::attaque(Zombie& zombie)
-//{
-//
-//}
+void Personnage::attaque()
+{
+
+}
