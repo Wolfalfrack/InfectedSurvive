@@ -26,8 +26,8 @@ class Arme
 
         string str()const;
 
-        void ajouterMunition(Munition mun);
-        void shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm);
+        void ajouterMunition(Munition& mun);
+        void shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm, const RenderWindow& window);
 
     protected:
 

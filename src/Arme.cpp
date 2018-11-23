@@ -40,12 +40,12 @@ vector<Munition> Arme::getMunition()
     return munitions;
 }
 
-void Arme::ajouterMunition(Munition mun)
+void Arme::ajouterMunition(Munition& mun)
 {
     munitions.push_back(mun);
 }
 
-void Arme::shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm){
+void Arme::shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm, const RenderWindow& window){
     if(Mouse::isButtonPressed(Mouse::Left))
     {
         mun.shape.setPosition(persoCenter);
@@ -56,4 +56,15 @@ void Arme::shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm){
     {
         munitions[i].shape.move(munitions[i].currVelocity);
     }
+    for (size_t i = 0; i < munitions.size(); i++)
+    {
+        munitions[i].shape.move(munitions[i].currVelocity);
+
+        if (munitions[i].shape.getPosition().x < 0 || munitions[i].shape.getPosition().x > window.getSize().x
+            || munitions[i].shape.getPosition().y < 0 || munitions[i].shape.getPosition().y > window.getSize().y)
+        {
+            munitions.erase(munitions.begin() + i);
+        }
+    }
 }
+

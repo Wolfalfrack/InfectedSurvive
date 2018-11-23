@@ -14,7 +14,10 @@ Personnage::Personnage(int vie, int vitesse,Arme arme)
     texturePerso.setSmooth(true);
     spritePerso.setTexture(texturePerso);
 
-    spritePerso.setPosition(Vector2f(1230/2,570/2));
+    // SPAWN PERSO POUR NICO
+//    spritePerso.setPosition(Vector2f(1230/2,570/2));
+    // SPAWN PERSO POUR LUDO
+    spritePerso.setPosition(Vector2f(1830/2,830/2));
 }
 
 Personnage::Personnage(const Personnage& other){
@@ -73,7 +76,7 @@ Texture Personnage::getTexturePerso()
 }
 
 Vector2f Personnage::getCenterPosition(){
-    return Vector2f(spritePerso.getPosition().x + 32, spritePerso.getPosition().y + 64);
+    return Vector2f(spritePerso.getPosition().x +28, spritePerso.getPosition().y+32);
 }
 
 void Personnage::deplacementClavier()
@@ -102,14 +105,27 @@ void Personnage::deplacementClavier()
         spritePerso.move(vitesse,0);
     }
 
+
+    // LIMITE POUR NICO
+//    if(spritePerso.getPosition().x <=0)
+//        spritePerso.setPosition(Vector2f(0, spritePerso.getPosition().y));
+//    if(spritePerso.getPosition().y <=0)
+//        spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,0));
+//    if(spritePerso.getPosition().y >=580)
+//        spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,580));
+//    if(spritePerso.getPosition().x >=1230)
+//        spritePerso.setPosition(Vector2f(1230, spritePerso.getPosition().y));
+
+
+    // LIMITE POUR LUDO
     if(spritePerso.getPosition().x <=0)
         spritePerso.setPosition(Vector2f(0, spritePerso.getPosition().y));
     if(spritePerso.getPosition().y <=0)
         spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,0));
-    if(spritePerso.getPosition().y >=570)
-        spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,570));
-    if(spritePerso.getPosition().x >=1230)
-        spritePerso.setPosition(Vector2f(1230, spritePerso.getPosition().y));
+    if(spritePerso.getPosition().y >=830)
+        spritePerso.setPosition(Vector2f(spritePerso.getPosition().x,830));
+    if(spritePerso.getPosition().x >=1830)
+        spritePerso.setPosition(Vector2f(1830, spritePerso.getPosition().y));
 
 
     anim.x++;

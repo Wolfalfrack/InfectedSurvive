@@ -466,7 +466,7 @@
 
 1542030305 D
 
-1542971120 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\personnage.cpp
+1542980631 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\personnage.cpp
 	"Personnage.h"
 
 1542970949 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\personnage.h
@@ -477,7 +477,7 @@
 	<cmath>
 	"Arme.h"
 
-1542973298 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\arme.h
+1542977999 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\arme.h
 	<string>
 	<sstream>
 	<iostream>
@@ -487,7 +487,7 @@
 	<SFML/System.hpp>
 	"Munition.h"
 
-1542787753 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\zombie.cpp
+1542980662 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\zombie.cpp
 	"Zombie.h"
 
 1542787755 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\zombie.h
@@ -529,9 +529,10 @@
 1542034107 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\application.h
 	"MainMenu.h"
 
-1542972353 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\mainmenu.h
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
+1542976801 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\mainmenu.h
+	"SFML\Graphics.hpp"
+	"SFML\Window.hpp"
+	"SFML\System.hpp"
 	"Personnage.h"
 	"Arme.h"
 	"Zombie.h"
@@ -543,10 +544,10 @@
 1542034107 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\application.cpp
 	"Application.h"
 
-1542973403 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\arme.cpp
+1542977995 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\arme.cpp
 	"Arme.h"
 
-1542972282 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\mainmenu.cpp
+1542979718 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\mainmenu.cpp
 	"MainMenu.h"
 
 1542106535 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\deplacementpersonnage.h
