@@ -6,6 +6,7 @@
 #include "Arme.h"
 #include "Zombie.h"
 #include "Map.h"
+#include "Munition.h"
 #include <thread>
 #include <iostream>
 
@@ -21,6 +22,9 @@ class MainMenu
     protected:
 
     private:
+        Vector2f mousePosWindow;
+        Vector2f aimDir;
+        Vector2f aimDirNorm;
 };
 
 #endif // MAINMENU_H

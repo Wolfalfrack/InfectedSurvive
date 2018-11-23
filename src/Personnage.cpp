@@ -72,6 +72,10 @@ Texture Personnage::getTexturePerso()
     return texturePerso;
 }
 
+Vector2f Personnage::getCenterPosition(){
+    return Vector2f(spritePerso.getPosition().x + 32, spritePerso.getPosition().y + 64);
+}
+
 void Personnage::deplacementClavier()
 {
     enum Dir{Up, Left, Down, Right};

@@ -27,6 +27,8 @@ class Personnage
         Sprite getSpritePerso();
         Texture getTexturePerso();
 
+        Vector2f getCenterPosition();
+
         void deplacementClavier();
         void attaque();
 
