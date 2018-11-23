@@ -18,8 +18,6 @@ void MainMenu::draw()
     sf::RenderWindow window(sf::VideoMode(1900, 900), "InfectedSurvive");
 
     window.setFramerateLimit(60);
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
     Munition mun(5.f);
 
@@ -28,7 +26,9 @@ void MainMenu::draw()
 
     Personnage personnage(1000,15,arme);
 
-    Zombie zombie(10,5,10);
+    Zombie zombie(10, 3, 10);
+
+    ListZombie zombies(0);
 
     Map map;
 
@@ -44,25 +44,39 @@ void MainMenu::draw()
 
         personnage.deplacementClavier();
 
-        zombie.deplacementAleatoire(personnage);
+        if(zombies.getNbZombie()<zombies.getNbZombieMax())
+        {
+            zombies.ajouterZombie(zombie);
+        }
+
+        for (int i = 0; i < zombies.getZombies().size(); i++)
+		{
+			zombies.getZombies()[i].deplacementAleatoire(personnage);
+		}
+//        zombie.deplacementAleatoire(personnage);
+
         mousePosWindow = Vector2f(Mouse::getPosition(window));
         aimDir = mousePosWindow - personnage.getCenterPosition();
         aimDirNorm = aimDir/(float)sqrt(pow(aimDir.x,2) + pow(aimDir.y,2));
-//        cout<< aimDirNorm.x << " "<< aimDirNorm.y << endl;
 
 
-        window.clear();
+
+        arme.shoot(mun,personnage.getCenterPosition(),aimDirNorm, window);
 
         window.draw(map.getSpriteMap());
 
-
         window.draw(personnage.getSpritePerso());
-        window.draw(zombie.getSpriteZombie());
-        for(size_t i = 0; i < arme.getMunition().size(); i++)
+
+        for (int i = 0; i < zombies.getZombies().size(); i++)
+		{
+			window.draw(zombies.getZombies()[i].getSpriteZombie());
+		}
+
+        for(int i = 0; i < arme.getMunition().size(); i++)
         {
             window.draw(arme.getMunition()[i].shape);
         }
-        arme.shoot(mun,personnage.getCenterPosition(),aimDirNorm, window);
+
 
 //        if(personnage.getVie()<=0){
 //            window.clear();
@@ -70,6 +84,7 @@ void MainMenu::draw()
 //        }
 
         window.display();
+        window.clear();
 
 
 

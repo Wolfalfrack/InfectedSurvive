@@ -40,7 +40,6 @@ class Zombie
         int puissance;
         Texture textureZombie;
         Sprite spriteZombie;
-        int numSprite;
 };
 
 #endif // ZOMBIE_H

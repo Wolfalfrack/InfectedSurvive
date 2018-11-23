@@ -1,5 +1,6 @@
 #include "Arme.h"
 
+
 Arme::Arme(int puissance, string sprite)
 {
     this->puissance = puissance;
@@ -65,6 +66,18 @@ void Arme::shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm, const R
         {
             munitions.erase(munitions.begin() + i);
         }
+//        else
+//        {
+//            for (size_t k = 0; k < zombies.size(); k++)
+//            {
+//                if (munitions[i].shape.getGlobalBounds().intersects(zombies[k].getSpriteZombie().getGlobalBounds()))
+//                {
+//                    munitions.erase(munitions.begin() + i);
+//                    zombies.erase(zombies.begin() + k);
+//                    break;
+//                }
+//            }
+//        }
     }
 }
 

@@ -7,7 +7,8 @@
 #include <cmath>
 #include <vector>
 #include <SFML/System.hpp>
-#include "Munition.h";
+#include "Munition.h"
+
 
 using namespace std;
 using namespace sf;

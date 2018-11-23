@@ -52,6 +52,7 @@
 		</Linker>
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/Arme.h" />
+		<Unit filename="include/ListZombie.h" />
 		<Unit filename="include/MainMenu.h" />
 		<Unit filename="include/Map.h" />
 		<Unit filename="include/Munition.h" />
@@ -60,6 +61,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Arme.cpp" />
+		<Unit filename="src/ListZombie.cpp" />
 		<Unit filename="src/MainMenu.cpp" />
 		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/Munition.cpp" />

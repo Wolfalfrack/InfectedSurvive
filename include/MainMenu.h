@@ -8,6 +8,7 @@
 #include "Zombie.h"
 #include "Map.h"
 #include "Munition.h"
+#include "ListZombie.h"
 #include <thread>
 #include <iostream>
 
