@@ -13,9 +13,9 @@ MainMenu::~MainMenu()
 void MainMenu::draw()
 {
     // TAILLE POUR NICO
-//    sf::RenderWindow window(sf::VideoMode(1300, 650), "InfectedSurvive");
+    sf::RenderWindow window(sf::VideoMode(1300, 650), "InfectedSurvive");
     // TAILE POUR LUDO
-    sf::RenderWindow window(sf::VideoMode(1900, 900), "InfectedSurvive");
+//    sf::RenderWindow window(sf::VideoMode(1900, 900), "InfectedSurvive");
 
     window.setFramerateLimit(60);
 

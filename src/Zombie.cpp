@@ -15,9 +15,9 @@ Zombie::Zombie(int vie, int vitesse, int puissance)
     spriteZombie.setTexture(textureZombie);
 
     // SPAWN ZOMBIE POUR NICO
-//    spriteZombie.setPosition(Vector2f(rand()%1230,rand()%570));
+    spriteZombie.setPosition(Vector2f(rand()%1230,rand()%570));
     // SPAWN ZOMBIE POUR LUDO
-    spriteZombie.setPosition(Vector2f(rand()%1830,rand()%830));
+//    spriteZombie.setPosition(Vector2f(rand()%1830,rand()%830));
 
 }
 
@@ -103,24 +103,24 @@ void Zombie::deplacementAleatoire(Personnage& personnage)
 
 
     // LIMITE POUR NICO
-//    if(spriteZombie.getPosition().x <=0)
-//        spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
-//    else if(spriteZombie.getPosition().y <=0)
-//        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,0));
-//    else if(spriteZombie.getPosition().y >=570)
-//        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,570));
-//    else if(spriteZombie.getPosition().x >=1230)
-//        spriteZombie.setPosition(Vector2f(1230, spriteZombie.getPosition().y));
-
-    // LIMITE POUR LUDO
     if(spriteZombie.getPosition().x <=0)
         spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
     else if(spriteZombie.getPosition().y <=0)
         spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,0));
-    else if(spriteZombie.getPosition().y >=830)
-        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,830));
-    else if(spriteZombie.getPosition().x >=1830)
-        spriteZombie.setPosition(Vector2f(1830, spriteZombie.getPosition().y));
+    else if(spriteZombie.getPosition().y >=570)
+        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,570));
+    else if(spriteZombie.getPosition().x >=1230)
+        spriteZombie.setPosition(Vector2f(1230, spriteZombie.getPosition().y));
+
+    // LIMITE POUR LUDO
+//    if(spriteZombie.getPosition().x <=0)
+//        spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
+//    else if(spriteZombie.getPosition().y <=0)
+//        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,0));
+//    else if(spriteZombie.getPosition().y >=830)
+//        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,830));
+//    else if(spriteZombie.getPosition().x >=1830)
+//        spriteZombie.setPosition(Vector2f(1830, spriteZombie.getPosition().y));
 
     anim.x ++;
     if(anim.x * 16  >= textureZombie.getSize().x){
