@@ -9,8 +9,8 @@ class ListZombie
         ListZombie(int nbZombieMax);
         virtual ~ListZombie();
 
-        void ajouterZombie(Zombie zombie);
-        vector<Zombie> getZombies();
+        void ajouterZombie(Zombie* zombie);
+        vector<Zombie*> getZombies();
         int getNbZombie();
         int getNbZombieMax();
         string str();
@@ -20,7 +20,7 @@ class ListZombie
     private:
         int nbZombieMax;
         int nbZombie;
-        vector<Zombie> zombies;
+        vector<Zombie*> zombies;
 };
 
 #endif // LISTZOMBIE_H

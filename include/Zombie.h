@@ -20,6 +20,8 @@ class Zombie
         Zombie& operator=(const Zombie& other);
         virtual ~Zombie();
 
+        Zombie* clone()const;
+
         void deplacementAleatoire(Personnage& personnage);
         bool attaque(Personnage& personnage);
         int randomSprite();
@@ -29,12 +31,18 @@ class Zombie
         int getVie();
         int getVitesse();
         int getPuissance();
+
+        void setVie();
+        void setVitesse();
+        void setPuissance();
         Texture getTextureZombie();
         Sprite getSpriteZombie();
 
     protected:
 
     private:
+        int* id;
+        static int compteur;
         int vie;
         int vitesse;
         int puissance;

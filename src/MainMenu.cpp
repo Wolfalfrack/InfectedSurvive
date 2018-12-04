@@ -24,13 +24,16 @@ void MainMenu::draw()
     Arme arme(10,"sprite.png");
     arme.ajouterMunition(mun);
 
-    Personnage personnage(1000,15,arme);
+    Personnage personnage(1000,5,arme);
 
-    Zombie zombie(10, 3, 10);
 
-    ListZombie zombies(0);
 
     Map map;
+
+    Zombie zombie(100,1,10);
+    ListZombie listZombie(20);
+
+
 
 
     while (window.isOpen())
@@ -44,22 +47,20 @@ void MainMenu::draw()
 
         personnage.deplacementClavier();
 
-        if(zombies.getNbZombie()<zombies.getNbZombieMax())
+        if(listZombie.getNbZombie()<listZombie.getNbZombieMax())
         {
-            zombies.ajouterZombie(zombie);
+            listZombie.ajouterZombie(zombie.clone());
         }
 
-        for (int i = 0; i < zombies.getZombies().size(); i++)
+        for (int i = 0; i < listZombie.getZombies().size(); i++)
 		{
-			zombies.getZombies()[i].deplacementAleatoire(personnage);
+			listZombie.getZombies()[i]->deplacementAleatoire(personnage);
 		}
-//        zombie.deplacementAleatoire(personnage);
+
 
         mousePosWindow = Vector2f(Mouse::getPosition(window));
         aimDir = mousePosWindow - personnage.getCenterPosition();
         aimDirNorm = aimDir/(float)sqrt(pow(aimDir.x,2) + pow(aimDir.y,2));
-
-
 
         arme.shoot(mun,personnage.getCenterPosition(),aimDirNorm, window);
 
@@ -67,16 +68,15 @@ void MainMenu::draw()
 
         window.draw(personnage.getSpritePerso());
 
-        for (int i = 0; i < zombies.getZombies().size(); i++)
-		{
-			window.draw(zombies.getZombies()[i].getSpriteZombie());
-		}
+        for(int i =0; i < listZombie.getZombies().size(); i++)
+        {
+            window.draw(listZombie.getZombies()[i]->getSpriteZombie());
+        }
 
         for(int i = 0; i < arme.getMunition().size(); i++)
         {
             window.draw(arme.getMunition()[i].shape);
         }
-
 
 //        if(personnage.getVie()<=0){
 //            window.clear();

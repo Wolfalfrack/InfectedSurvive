@@ -1,7 +1,10 @@
 #include "Zombie.h"
 
+int Zombie::compteur = 1000;
+
 Zombie::Zombie(int vie, int vitesse, int puissance)
 {
+    this->id = new int(compteur++);
     this->vie = vie;
     this->vitesse = vitesse;
     this->puissance = puissance;
@@ -9,7 +12,7 @@ Zombie::Zombie(int vie, int vitesse, int puissance)
     if(!textureZombie.loadFromFile("zombie.png")){
         cout<<"Error loading sprite";
     }
-    srand(time(NULL));
+
 
     textureZombie.setSmooth(true);
     spriteZombie.setTexture(textureZombie);
@@ -33,6 +36,11 @@ Zombie& Zombie::operator=(const Zombie& other){
     this->vitesse = other.vitesse;
     this->puissance = other.puissance;
     return *this;
+}
+
+Zombie* Zombie::clone()const
+{
+    return new Zombie(this->vie, this->vitesse, this->puissance);
 }
 
 int Zombie::getVie()
@@ -60,14 +68,29 @@ Sprite Zombie::getSpriteZombie()
     return spriteZombie;
 }
 
+void Zombie::setVie()
+{
+    this->vie++;
+}
+
+void Zombie::setVitesse()
+{
+    this->vitesse++;
+}
+
+void Zombie::setPuissance()
+{
+    this->puissance++;
+}
+
 Zombie::~Zombie()
 {
-    //dtor
+    delete this->id;
 }
 
 string Zombie::str()const{
     stringstream strs;
-    strs<<vie<<" "<<vitesse<<" "<<puissance;
+    strs << *id << " " <<vie<<" "<<vitesse<<" "<<puissance;
     return strs.str();
 }
 

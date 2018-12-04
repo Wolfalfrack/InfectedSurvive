@@ -11,13 +11,13 @@ ListZombie::~ListZombie()
     //dtor
 }
 
-void ListZombie::ajouterZombie(Zombie zombie)
+void ListZombie::ajouterZombie(Zombie* zombie)
 {
     zombies.push_back(zombie);
     nbZombie++;
 }
 
-vector<Zombie> ListZombie::getZombies()
+vector<Zombie*> ListZombie::getZombies()
 {
     return zombies;
 }
@@ -37,7 +37,7 @@ string ListZombie::str()
     stringstream strs;
     for (int i = 0; i < zombies.size(); i++)
     {
-        strs<<zombies[i].str()<<" ";
+        strs<<zombies[i]->str()<<" ";
     }
 //    strs<<puissance<<" ";
     return strs.str();
