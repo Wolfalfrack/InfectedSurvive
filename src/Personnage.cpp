@@ -2,11 +2,11 @@
 
 using namespace std;
 
-Personnage::Personnage(int vie, int vitesse,Arme arme)
+Personnage::Personnage(int vie, int vitesse,Weapon weapon)
 {
     this->vie = vie;
     this->vitesse = vitesse;
-    this->arme = arme;
+    this->weapon = weapon;
 
     if(!texturePerso.loadFromFile("spritePerso.png")){
             cout<<"Error loading sprite";
@@ -23,7 +23,7 @@ Personnage::Personnage(int vie, int vitesse,Arme arme)
 Personnage::Personnage(const Personnage& other){
     this->vie = other.vie;
     this->vitesse = other.vitesse;
-    this->arme = other.arme;
+    this->weapon = other.weapon;
 }
 
 Personnage::~Personnage()
@@ -35,13 +35,13 @@ Personnage& Personnage::operator=(const Personnage& other){
     if(this==&other)return *this;
     this->vie = other.vie;
     this->vitesse = other.vitesse;
-    this->arme = other.arme;
+    this->weapon = other.weapon;
     return *this;
 }
 
 string Personnage::str()const{
     stringstream strs;
-    strs<<vie<<" "<<vitesse<<" "<<arme.str();
+    strs<<vie<<" "<<vitesse<<" "<<weapon.str();
     return strs.str();
 }
 
@@ -60,9 +60,9 @@ int Personnage::getVitesse()
     return vitesse;
 }
 
-Arme Personnage::getArme()
+Weapon Personnage::getWeapon()
 {
-    return arme;
+    return weapon;
 }
 
 Sprite Personnage::getSpritePerso()
@@ -135,9 +135,4 @@ void Personnage::deplacementClavier()
 
 
     spritePerso.setTextureRect(IntRect(anim.x * 0, anim.y * 64,64,64));
-}
-
-void Personnage::attaque()
-{
-
 }

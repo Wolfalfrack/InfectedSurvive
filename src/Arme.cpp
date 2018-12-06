@@ -46,7 +46,7 @@ void Arme::ajouterMunition(Munition& mun)
     munitions.push_back(mun);
 }
 
-void Arme::shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm, const RenderWindow& window){
+void Arme::shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm, const RenderWindow& window, ListZombie& listZombie){
     if(Mouse::isButtonPressed(Mouse::Left))
     {
         mun.shape.setPosition(persoCenter);
@@ -66,18 +66,18 @@ void Arme::shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm, const R
         {
             munitions.erase(munitions.begin() + i);
         }
-//        else
-//        {
-//            for (size_t k = 0; k < zombies.size(); k++)
-//            {
-//                if (munitions[i].shape.getGlobalBounds().intersects(zombies[k].getSpriteZombie().getGlobalBounds()))
-//                {
-//                    munitions.erase(munitions.begin() + i);
-//                    zombies.erase(zombies.begin() + k);
-//                    break;
-//                }
-//            }
-//        }
+        else
+        {
+            for (size_t k = 0; k < listZombie.getZombies().size(); k++)
+            {
+                if (munitions[i].shape.getGlobalBounds().intersects(listZombie.getZombies()[k]->getSpriteZombie().getGlobalBounds()))
+                {
+                    munitions.erase(munitions.begin() + i);
+                    listZombie.deleteZombie(listZombie.getZombies()[k]);
+                    break;
+                }
+            }
+        }
     }
 }
 

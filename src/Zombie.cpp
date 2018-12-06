@@ -1,61 +1,80 @@
 #include "Zombie.h"
 
-int Zombie::compteur = 1000;
+int Zombie::counter = 1000;
 
-Zombie::Zombie(int vie, int vitesse, int puissance)
+Zombie::Zombie(int speed, int power, Vector2f characterPosition)
 {
-    this->id = new int(compteur++);
-    this->vie = vie;
-    this->vitesse = vitesse;
-    this->puissance = puissance;
+    this->id = new int(counter++);
+    this->speed = speed;
+    this->power = power;
 
-    if(!textureZombie.loadFromFile("zombie.png")){
-        cout<<"Error loading sprite";
+    this->nbSprite = (rand()%9 + 1);
+    if(nbSprite >0 && nbSprite <=4){
+        if(!textureZombie.loadFromFile("zombie1.png")){
+            cout<<"Error loading sprite";
+        }
     }
-
+    else if(nbSprite >4 && nbSprite <=8){
+        if(!textureZombie.loadFromFile("zombie2.png")){
+            cout<<"Error loading sprite";
+        }
+    }
+    else if( nbSprite == 9){
+        if(!textureZombie.loadFromFile("goat.png")){
+            cout<<"Error loading sprite";
+        }
+    }
 
     textureZombie.setSmooth(true);
     spriteZombie.setTexture(textureZombie);
 
-    // SPAWN ZOMBIE POUR NICO
-    spriteZombie.setPosition(Vector2f(rand()%1230,rand()%570));
-    // SPAWN ZOMBIE POUR LUDO
-//    spriteZombie.setPosition(Vector2f(rand()%1830,rand()%830));
 
+     spriteZombie.setPosition(Vector2f(rand()%1230,rand()%570));
+    int value = rand()%4 + 1;
+    if(value == 1){
+        spriteZombie.setPosition(Vector2f(10,rand()%570));
+    }
+    else if(value == 2){
+         spriteZombie.setPosition(Vector2f(1220,rand()%570));
+    }
+    else if(value == 3){
+         spriteZombie.setPosition(Vector2f(rand()%1230,10));
+    }
+    else if (value == 4){
+         spriteZombie.setPosition(Vector2f(rand()%1230,560));
+    }
 }
 
 Zombie::Zombie(const Zombie& other){
-    this->vie = other.vie;
-    this->vitesse = other.vitesse;
-    this->puissance = other.puissance;
+    this->speed = other.speed;
+    this->power = other.power;
 }
 
 Zombie& Zombie::operator=(const Zombie& other){
     if(this==&other)return *this;
-    this->vie = other.vie;
-    this->vitesse = other.vitesse;
-    this->puissance = other.puissance;
+    this->speed = other.speed;
+    this->power = other.power;
     return *this;
 }
 
 Zombie* Zombie::clone()const
 {
-    return new Zombie(this->vie, this->vitesse, this->puissance);
+    return new Zombie(this->speed, this->power, this->characterPosition);
 }
 
-int Zombie::getVie()
+int* Zombie::getId()
 {
-    return vie;
+    return id;
 }
 
-int Zombie::getVitesse()
+int Zombie::getSpeed()
 {
-    return vitesse;
+    return speed;
 }
 
-int Zombie::getPuissance()
+int Zombie::getPower()
 {
-    return puissance;
+    return power;
 }
 
 Texture Zombie::getTextureZombie()
@@ -68,19 +87,19 @@ Sprite Zombie::getSpriteZombie()
     return spriteZombie;
 }
 
-void Zombie::setVie()
+int Zombie::getNbSprite()
 {
-    this->vie++;
+    return nbSprite;
 }
 
-void Zombie::setVitesse()
+void Zombie::setSpeed()
 {
-    this->vitesse++;
+    this->speed;
 }
 
-void Zombie::setPuissance()
+void Zombie::setPower()
 {
-    this->puissance++;
+    this->power++;
 }
 
 Zombie::~Zombie()
@@ -90,78 +109,133 @@ Zombie::~Zombie()
 
 string Zombie::str()const{
     stringstream strs;
-    strs << *id << " " <<vie<<" "<<vitesse<<" "<<puissance;
+    strs << *id <<" "<<speed<<" "<<power;
     return strs.str();
 }
 
-void Zombie::deplacementAleatoire(Personnage& personnage)
+bool Zombie::randomMove(Sprite spritePerso)
 {
 
     enum Dir{Down, Left, Right, Up};
     Vector2i anim(1, Down);
 
 
-    if(!attaque(personnage)){
-        if(personnage.getSpritePerso().getPosition().x+32 < spriteZombie.getPosition().x+16)
-        {
-            anim.y = Left;
-            spriteZombie.move(-vitesse,0);
-        }
-        if(personnage.getSpritePerso().getPosition().x+32 > spriteZombie.getPosition().x+16)
-        {
-            anim.y = Right;
-            spriteZombie.move(vitesse,0);
-        }
-        if(personnage.getSpritePerso().getPosition().y+64 < spriteZombie.getPosition().y+16)
-        {
-            anim.y = Up;
-            spriteZombie.move(0,-vitesse);
-        }
-        if(personnage.getSpritePerso().getPosition().y> spriteZombie.getPosition().y+16)
-        {
-            anim.y = Down;
-            spriteZombie.move(0,vitesse);
+    if(nbSprite != 9){
+        if(!attack(spritePerso)){
+            if(spritePerso.getPosition().x+28 < spriteZombie.getPosition().x+16)
+            {
+                anim.y = Left;
+                spriteZombie.move(-speed,0);
+            }
+            if(spritePerso.getPosition().x+28 > spriteZombie.getPosition().x+16)
+            {
+                anim.y = Right;
+                spriteZombie.move(speed,0);
+            }
+            if(spritePerso.getPosition().y+32 < spriteZombie.getPosition().y+16)
+            {
+                anim.y = Up;
+                spriteZombie.move(0,-speed);
+            }
+            if(spritePerso.getPosition().y+32> spriteZombie.getPosition().y+16)
+            {
+                anim.y = Down;
+                spriteZombie.move(0,speed);
+            }
+
+            if(spriteZombie.getPosition().x <=0)
+                spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
+            else if(spriteZombie.getPosition().y <=0)
+                spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,0));
+            else if(spriteZombie.getPosition().y >=570)
+                spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,570));
+            else if(spriteZombie.getPosition().x >=1230)
+                spriteZombie.setPosition(Vector2f(1230, spriteZombie.getPosition().y));
+
+            anim.x ++;
+            if(anim.x * 16  >= textureZombie.getSize().x){
+                anim.x = 64;
+            }
+            spriteZombie.setTextureRect(IntRect(anim.x * spriteValue(), anim.y * 32,34,32));
+
+            return false;
         }
     }
 
+    if(nbSprite == 9)
+    {
+        if(!attack(spritePerso)){
+            if(spritePerso.getPosition().x+28 < spriteZombie.getPosition().x+32)
+            {
+                anim.y = Left;
+                spriteZombie.move(-speed,0);
+            }
+            if(spritePerso.getPosition().x+28 > spriteZombie.getPosition().x+32)
+            {
+                anim.y = Right;
+                spriteZombie.move(speed,0);
+            }
+            if(spritePerso.getPosition().y+32 < spriteZombie.getPosition().y+32)
+            {
+                anim.y = Up;
+                spriteZombie.move(0,-speed);
+            }
+            if(spritePerso.getPosition().y+32> spriteZombie.getPosition().y+32)
+            {
+                anim.y = Down;
+                spriteZombie.move(0,speed);
+            }
 
-    // LIMITE POUR NICO
-    if(spriteZombie.getPosition().x <=0)
-        spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
-    else if(spriteZombie.getPosition().y <=0)
-        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,0));
-    else if(spriteZombie.getPosition().y >=570)
-        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,570));
-    else if(spriteZombie.getPosition().x >=1230)
-        spriteZombie.setPosition(Vector2f(1230, spriteZombie.getPosition().y));
+            if(spriteZombie.getPosition().x <=0)
+                spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
+            else if(spriteZombie.getPosition().y <=0)
+                spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,0));
+            else if(spriteZombie.getPosition().y >=570)
+                spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,570));
+            else if(spriteZombie.getPosition().x >=1230)
+                spriteZombie.setPosition(Vector2f(1230, spriteZombie.getPosition().y));
 
-    // LIMITE POUR LUDO
-//    if(spriteZombie.getPosition().x <=0)
-//        spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
-//    else if(spriteZombie.getPosition().y <=0)
-//        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,0));
-//    else if(spriteZombie.getPosition().y >=830)
-//        spriteZombie.setPosition(Vector2f(spriteZombie.getPosition().x,830));
-//    else if(spriteZombie.getPosition().x >=1830)
-//        spriteZombie.setPosition(Vector2f(1830, spriteZombie.getPosition().y));
+            anim.x ++;
+            if(anim.x * 48  >= textureZombie.getSize().x){
+                anim.x = 0;
+            }
+            spriteZombie.setTextureRect(IntRect(anim.x * spriteValue(), anim.y * 48,48,48));
 
-    anim.x ++;
-    if(anim.x * 16  >= textureZombie.getSize().x){
-        anim.x = 64;
+            return false;
+        }
     }
-
-    // X = 16 / 64 / 112 / 160 = sprite 1 / 2 / 3 / 4
-
-    spriteZombie.setTextureRect(IntRect(anim.x * 16, anim.y * 32,34,32));
+    return true;
 }
 
-bool Zombie::attaque(Personnage& personnage)
+bool Zombie::attack(Sprite spriteCharacter)
 {
-    if((abs((personnage.getSpritePerso().getPosition().x + 32) - (spriteZombie.getPosition().x + 16)) < 32)&&(abs((personnage.getSpritePerso().getPosition().y + 32) - (spriteZombie.getPosition().y + 16)) < 32))
-    {
-        personnage.setVie(personnage.getVie()-puissance);
-        cout<<personnage.getVie();
+    if((abs((spriteCharacter.getPosition().x + 32) - (spriteZombie.getPosition().x + 16)) < 32)&&(abs((spriteCharacter.getPosition().y + 32) - (spriteZombie.getPosition().y + 16)) < 32)){
         return true;
     }
     return false;
+}
+
+int Zombie::spriteValue()
+{
+    if(nbSprite == 1 || nbSprite == 5){
+        return 16;
+    }
+    else if (nbSprite == 2 || nbSprite == 6){
+        speed = 2;
+        power = 15;
+        return 64;
+    }
+    else if (nbSprite == 3 || nbSprite == 7){
+        power = 20;
+        return 112;
+    }
+    else if (nbSprite == 4 || nbSprite == 8){
+        speed = 3;
+        return 160;
+    }
+    else if (nbSprite == 9){
+        speed = 5;
+        power = 0;
+        return 0;
+    }
 }

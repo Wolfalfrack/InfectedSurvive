@@ -5,7 +5,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <cmath>
-#include "Arme.h"
+#include "Weapon.h"
+//#include "Zombie.h"
 using namespace std;
 using namespace sf;
 
@@ -13,7 +14,7 @@ using namespace sf;
 class Personnage
 {
     public:
-        Personnage(int vie, int vitesse,Arme arme);
+        Personnage(int vie, int vitesse,Weapon weapon);
         Personnage(const Personnage& other);
         Personnage& operator=(const Personnage& other);
         virtual ~Personnage();
@@ -23,21 +24,20 @@ class Personnage
         int getVie();
         void setVie(int vie);
         int getVitesse();
-        Arme getArme();
+        Weapon getWeapon();
         Sprite getSpritePerso();
         Texture getTexturePerso();
 
         Vector2f getCenterPosition();
 
         void deplacementClavier();
-        void attaque();
 
     protected:
 
     private:
         int vie;
         int vitesse;
-        Arme arme;
+        Weapon weapon;
         Texture texturePerso;
         Sprite spritePerso;
 };

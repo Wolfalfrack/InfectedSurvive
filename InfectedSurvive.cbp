@@ -51,21 +51,21 @@
 			<Add directory="C:/SFML-2.5.0/lib" />
 		</Linker>
 		<Unit filename="include/Application.h" />
-		<Unit filename="include/Arme.h" />
+		<Unit filename="include/Bullet.h" />
+		<Unit filename="include/Character.h" />
 		<Unit filename="include/ListZombie.h" />
 		<Unit filename="include/MainMenu.h" />
 		<Unit filename="include/Map.h" />
-		<Unit filename="include/Munition.h" />
-		<Unit filename="include/Personnage.h" />
+		<Unit filename="include/Weapon.h" />
 		<Unit filename="include/Zombie.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
-		<Unit filename="src/Arme.cpp" />
+		<Unit filename="src/Bullet.cpp" />
+		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/ListZombie.cpp" />
 		<Unit filename="src/MainMenu.cpp" />
 		<Unit filename="src/Map.cpp" />
-		<Unit filename="src/Munition.cpp" />
-		<Unit filename="src/Personnage.cpp" />
+		<Unit filename="src/Weapon.cpp" />
 		<Unit filename="src/Zombie.cpp" />
 		<Extensions>
 			<code_completion />

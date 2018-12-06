@@ -7,7 +7,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
-#include "Personnage.h"
 
 using namespace std;
 using namespace sf;
@@ -15,39 +14,41 @@ using namespace sf;
 class Zombie
 {
     public:
-        Zombie(int vie, int vitesse, int puissance);
+        Zombie(int speed, int power, Vector2f characterPosition);
         Zombie(const Zombie& other);
         Zombie& operator=(const Zombie& other);
         virtual ~Zombie();
 
         Zombie* clone()const;
 
-        void deplacementAleatoire(Personnage& personnage);
-        bool attaque(Personnage& personnage);
+        bool randomMove(Sprite spritePerso);
+        bool attack(Sprite spritePerso);
         int randomSprite();
 
         string str()const;
 
-        int getVie();
-        int getVitesse();
-        int getPuissance();
+        int* getId();
+        int getSpeed();
+        int getPower();
+        int getNbSprite();
 
-        void setVie();
-        void setVitesse();
-        void setPuissance();
+        void setSpeed();
+        void setPower();
         Texture getTextureZombie();
         Sprite getSpriteZombie();
+        int spriteValue();
 
     protected:
 
     private:
         int* id;
-        static int compteur;
-        int vie;
-        int vitesse;
-        int puissance;
+        static int counter;
+        int speed;
+        int power;
+        int nbSprite;
         Texture textureZombie;
         Sprite spriteZombie;
+        Vector2f characterPosition;
 };
 
 #endif // ZOMBIE_H

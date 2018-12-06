@@ -1,19 +1,37 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
-#include "MainMenu.h"
+#include"SFML\Graphics.hpp"
+#include"SFML\Window.hpp"
+#include"SFML\System.hpp"
+#include <thread>
+#include <iostream>
+#include "Character.h"
+#include "Weapon.h"
+#include "Zombie.h"
+#include "Map.h"
+#include "Bullet.h"
+#include "ListZombie.h"
+
 
 
 class Application
 {
     public:
-        Application();
+        Application(int difficulty);
         virtual ~Application();
         void run();
-
+        void draw();
+        void func();
+        void setDifficulty(int difficulty);
     protected:
 
     private:
-        MainMenu mainMenu;
+        int killStreak;
+        int difficulty;
+        Vector2f mousePosWindow;
+        Vector2f aimDir;
+        Vector2f aimDirNorm;
+        RectangleShape hpBar;
 };
 
 #endif // APPLICATION_H

@@ -1,19 +1,17 @@
 #include <stdexcept>
 #include <iostream>
+#include "MainMenu.h"
 #include "Application.h"
 
 using namespace std;
 
 int main()
 {
-    try
-    {
-        srand(time(NULL));
-        Application app;
-        app.run();
+    srand(time(NULL));
 
-    }catch (std::exception& e)
-	{
-		std::cout << "\nEXCEPTION: " << e.what() << std::endl;
-	}
+//        MainMenu mainMenu;
+//        mainMenu.draw();
+        Application application(50);
+        application.run();
+
 }

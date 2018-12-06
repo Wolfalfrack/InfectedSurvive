@@ -3,30 +3,24 @@
 #include"SFML\Graphics.hpp"
 #include"SFML\Window.hpp"
 #include"SFML\System.hpp"
-#include "Personnage.h"
-#include "Arme.h"
-#include "Zombie.h"
-#include "Map.h"
-#include "Munition.h"
-#include "ListZombie.h"
-#include <thread>
-#include <iostream>
+#include"SFML\Audio.hpp"
 
+#define MAX_NUMBER_OF_ITEMS 3
+
+using namespace std;
+using namespace sf;
 
 class MainMenu
 {
     public:
         MainMenu();
         virtual ~MainMenu();
-        void draw();
-        void func();
+
 
     protected:
 
     private:
-        Vector2f mousePosWindow;
-        Vector2f aimDir;
-        Vector2f aimDirNorm;
+
 };
 
 #endif // MAINMENU_H

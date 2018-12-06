@@ -9,11 +9,15 @@ class ListZombie
         ListZombie(int nbZombieMax);
         virtual ~ListZombie();
 
-        void ajouterZombie(Zombie* zombie);
+        void addZombie(Zombie* zombie);
+        void deleteZombie(Zombie* zombie);
+        void deleteAllZombie();
+        int indexOf(Zombie* zombie);
         vector<Zombie*> getZombies();
         int getNbZombie();
         int getNbZombieMax();
         string str();
+
 
     protected:
 

@@ -11,10 +11,37 @@ ListZombie::~ListZombie()
     //dtor
 }
 
-void ListZombie::ajouterZombie(Zombie* zombie)
+void ListZombie::addZombie(Zombie* zombie)
 {
     zombies.push_back(zombie);
     nbZombie++;
+}
+
+void ListZombie::deleteZombie(Zombie* zombie)
+{
+    delete zombies.at(indexOf(zombie));
+    zombies.erase(zombies.begin() + indexOf(zombie));
+
+}
+
+void ListZombie::deleteAllZombie()
+{
+    for(int i = 0; i< zombies.size(); i++){
+        delete zombies.at(i);
+    }
+    zombies.clear();
+
+}
+
+int ListZombie::indexOf(Zombie* zombie)
+{
+    for(int i = 0; i<zombies.size(); i++)
+    {
+        if(zombies[i]->getId() == zombie->getId())
+        {
+            return i;
+        }
+    }
 }
 
 vector<Zombie*> ListZombie::getZombies()
@@ -39,6 +66,5 @@ string ListZombie::str()
     {
         strs<<zombies[i]->str()<<" ";
     }
-//    strs<<puissance<<" ";
     return strs.str();
 }

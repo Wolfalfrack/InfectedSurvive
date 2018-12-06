@@ -8,6 +8,7 @@
 #include <vector>
 #include <SFML/System.hpp>
 #include "Munition.h"
+#include "ListZombie.h"
 
 
 using namespace std;
@@ -28,7 +29,7 @@ class Arme
         string str()const;
 
         void ajouterMunition(Munition& mun);
-        void shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm, const RenderWindow& window);
+        void shoot(Munition mun,Vector2f persoCenter, Vector2f aimDirNorm, const RenderWindow& window, ListZombie& listZombie);
 
     protected:
 
