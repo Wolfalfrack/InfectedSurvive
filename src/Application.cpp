@@ -20,13 +20,13 @@ void Application::setDifficulty(int difficulty)
 }
 
 void Application::run(){
-    sf::RenderWindow window(VideoMode(1300, 700), "InfectedSurvive");
+    RenderWindow window(VideoMode(1300, 700), "InfectedSurvive");
 
     window.setFramerateLimit(60);
 
     Bullet bul(5.f);
 
-    Weapon weapon(10,"sprite.png");
+    Weapon weapon(10);
     weapon.addBullet(bul);
 
     Character character(1000,5,weapon);
@@ -40,10 +40,10 @@ void Application::run(){
 
     while (window.isOpen())
     {
-        sf::Event event;
+        Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            if (event.type == Event::Closed)
                 window.close();
         }
 
@@ -72,7 +72,6 @@ void Application::run(){
                 }
             }
         }
-
         mousePosWindow = Vector2f(Mouse::getPosition(window));
         aimDir = mousePosWindow - character.getCenterPosition();
         aimDirNorm = aimDir/(float)sqrt(pow(aimDir.x,2) + pow(aimDir.y,2));
@@ -95,10 +94,36 @@ void Application::run(){
 
         window.draw(hpBar);
 
-        if(character.getHealth()<=0){
+        if(hpBar.getSize().x<=0){
             window.clear();
-            window.draw(map.getSpriteMap());
-            window.close();
+
+            Sprite spriteBackground;
+            Texture textureBackground;
+            if(!textureBackground.loadFromFile("Media/Background.png"))
+            {
+                cout<<"Error loading background";
+            }
+            textureBackground.setSmooth(true);
+            spriteBackground.setTexture(textureBackground);
+            window.draw(spriteBackground);
+
+            weapon.deleteAllBullet();
+            listZombie.deleteAllZombie();
+
+            Font font;
+            Text text;
+            if(!font.loadFromFile("Media/arial.ttf")){}
+            text.setFont(font);
+            text.setString("                       You lose\n                   Your score : "+to_string(killStreak)+"\nPress spacebar to return to the menu.");
+            text.setPosition(400,300);
+            text.setColor(Color::White);
+
+            window.draw(text);
+
+            if(Keyboard::isKeyPressed(Keyboard::Space))
+            {
+                window.close();
+            }
         }
 
         window.display();
@@ -108,4 +133,3 @@ void Application::run(){
         timer++;
     }
 }
-

@@ -1,27 +1,26 @@
 #include "Weapon.h"
 
 
-Weapon::Weapon(int power, string sprite)
+Weapon::Weapon(int power)
 {
     this->power = power;
-    this->sprite = sprite;
+
+    if (!buffer.loadFromFile("Media/Goat.wav")){}
+    sound.setBuffer(buffer);
 }
 
 Weapon::Weapon()
 {
     this->power = 100;
-    this->sprite = "sprite.png";
 }
 
 Weapon::Weapon(const Weapon& other){
     this->power = other.power;
-    this->sprite = other.sprite;
 }
 
 Weapon& Weapon::operator=(const Weapon& other){
     if(this == &other)return *this;
     this->power = other.power;
-    this->sprite = other.sprite;
     return *this;
 }
 
@@ -44,6 +43,11 @@ vector<Bullet> Weapon::getBullet()
 void Weapon::addBullet(Bullet& bul)
 {
     bullets.push_back(bul);
+}
+
+void Weapon::deleteAllBullet()
+{
+    bullets.clear();
 }
 
 void Weapon::shoot(Bullet bul,Vector2f persoCenter, Vector2f aimDirNorm, const RenderWindow& window, ListZombie& listZombie, int& killStreak){
@@ -75,6 +79,8 @@ void Weapon::shoot(Bullet bul,Vector2f persoCenter, Vector2f aimDirNorm, const R
                     if(listZombie.getZombies()[k]->getNbSprite() == 9){
                         killStreak+=listZombie.getZombies().size();
                         listZombie.deleteAllZombie();
+
+                        sound.play();
                     }
                     else{
                         bullets.erase(bullets.begin() + i);

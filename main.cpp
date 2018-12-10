@@ -9,9 +9,7 @@ int main()
 {
     srand(time(NULL));
 
-//        MainMenu mainMenu;
-//        mainMenu.draw();
-        Application application(50);
-        application.run();
+        MainMenu mainMenu;
+        mainMenu.run();
 
 }

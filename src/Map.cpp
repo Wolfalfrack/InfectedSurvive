@@ -3,7 +3,7 @@ using namespace std;
 
 Map::Map()
 {
-    if(!textureMap.loadFromFile("background.png"))
+    if(!textureMap.loadFromFile("Media/map.png"))
     {
         cout<<"Error loading Map";
     }

@@ -8,20 +8,30 @@ Zombie::Zombie(int speed, int power, Vector2f characterPosition)
     this->speed = speed;
     this->power = power;
 
-    this->nbSprite = (rand()%9 + 1);
-    if(nbSprite >0 && nbSprite <=4){
-        if(!textureZombie.loadFromFile("zombie1.png")){
-            cout<<"Error loading sprite";
+    bool loadSprite = false;
+    while(!loadSprite){
+        this->nbSprite = (rand()%9 + 1);
+        if(nbSprite >0 && nbSprite <=4){
+            if(!textureZombie.loadFromFile("Media/zombie1.png")){
+                cout<<"Error loading sprite";
+            }
+            loadSprite = true;
         }
-    }
-    else if(nbSprite >4 && nbSprite <=8){
-        if(!textureZombie.loadFromFile("zombie2.png")){
-            cout<<"Error loading sprite";
+        else if(nbSprite >4 && nbSprite <=8){
+            if(!textureZombie.loadFromFile("Media/zombie2.png")){
+                cout<<"Error loading sprite";
+            }
+            loadSprite = true;
         }
-    }
-    else if( nbSprite == 9){
-        if(!textureZombie.loadFromFile("goat.png")){
-            cout<<"Error loading sprite";
+
+        else if( nbSprite == 9){
+            this->nbSprite = (rand()%50 + 9);
+            if( nbSprite == 9){
+                if(!textureZombie.loadFromFile("Media/goat.png")){
+                    cout<<"Error loading sprite";
+                }
+                loadSprite = true;
+            }
         }
     }
 

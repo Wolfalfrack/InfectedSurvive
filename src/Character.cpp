@@ -8,7 +8,7 @@ Character::Character(int health, int speed,Weapon weapon)
     this->speed = speed;
     this->weapon = weapon;
 
-    if(!textureCharacter.loadFromFile("spriteCharacter.png")){
+    if(!textureCharacter.loadFromFile("Media/spriteCharacter.png")){
             cout<<"Error loading sprite";
     }
     textureCharacter.setSmooth(true);
