@@ -2,7 +2,7 @@
 #define LISTZOMBIE_H
 #include "Zombie.h"
 
-
+// This class manages a list of zombies by adding or deleting them
 class ListZombie
 {
     public:

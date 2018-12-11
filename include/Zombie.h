@@ -11,6 +11,7 @@
 using namespace std;
 using namespace sf;
 
+// this class manages the actions of the zombies during the game
 class Zombie
 {
     public:

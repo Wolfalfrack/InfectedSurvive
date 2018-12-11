@@ -10,6 +10,7 @@ using namespace std;
 using namespace sf;
 
 
+// This class manages the character of the game played by the user
 class Character
 {
     public:

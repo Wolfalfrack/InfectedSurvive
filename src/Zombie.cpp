@@ -8,6 +8,7 @@ Zombie::Zombie(int speed, int power, Vector2f characterPosition)
     this->speed = speed;
     this->power = power;
 
+    // management of the sprite with a random system
     bool loadSprite = false;
     while(!loadSprite){
         this->nbSprite = (rand()%9 + 1);
@@ -38,8 +39,8 @@ Zombie::Zombie(int speed, int power, Vector2f characterPosition)
     textureZombie.setSmooth(true);
     spriteZombie.setTexture(textureZombie);
 
-
-     spriteZombie.setPosition(Vector2f(rand()%1230,rand()%570));
+    // random spawn of zombies from one of the 4 wall of the game
+    spriteZombie.setPosition(Vector2f(rand()%1230,rand()%570));
     int value = rand()%4 + 1;
     if(value == 1){
         spriteZombie.setPosition(Vector2f(10,rand()%570));
@@ -123,13 +124,14 @@ string Zombie::str()const{
     return strs.str();
 }
 
+// this method manages the movement of the zombie according to the position of the character
 bool Zombie::randomMove(Sprite spritePerso)
 {
 
     enum Dir{Down, Left, Right, Up};
     Vector2i anim(1, Down);
 
-
+    // this conditions manage the movement of zombies with their size of 32px / 32px
     if(nbSprite != 9){
         if(!attack(spritePerso)){
             if(spritePerso.getPosition().x+28 < spriteZombie.getPosition().x+16)
@@ -153,6 +155,7 @@ bool Zombie::randomMove(Sprite spritePerso)
                 spriteZombie.move(0,speed);
             }
 
+            // management of the map limits
             if(spriteZombie.getPosition().x <=0)
                 spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
             else if(spriteZombie.getPosition().y <=0)
@@ -171,7 +174,7 @@ bool Zombie::randomMove(Sprite spritePerso)
             return false;
         }
     }
-
+    // this conditions manage the movement of goats with their size of 48px / 48px
     if(nbSprite == 9)
     {
         if(!attack(spritePerso)){
@@ -196,6 +199,7 @@ bool Zombie::randomMove(Sprite spritePerso)
                 spriteZombie.move(0,speed);
             }
 
+            // management of the map limits
             if(spriteZombie.getPosition().x <=0)
                 spriteZombie.setPosition(Vector2f(0, spriteZombie.getPosition().y));
             else if(spriteZombie.getPosition().y <=0)
@@ -217,6 +221,7 @@ bool Zombie::randomMove(Sprite spritePerso)
     return true;
 }
 
+// this method returns true if there is a collision between the zombie and the character
 bool Zombie::attack(Sprite spriteCharacter)
 {
     if((abs((spriteCharacter.getPosition().x + 32) - (spriteZombie.getPosition().x + 16)) < 32)&&(abs((spriteCharacter.getPosition().y + 32) - (spriteZombie.getPosition().y + 16)) < 32)){
@@ -225,6 +230,7 @@ bool Zombie::attack(Sprite spriteCharacter)
     return false;
 }
 
+// this method gives speed ad power values according to the zombie and return a number according to their position in the sprite sheet
 int Zombie::spriteValue()
 {
     if(nbSprite == 1 || nbSprite == 5){

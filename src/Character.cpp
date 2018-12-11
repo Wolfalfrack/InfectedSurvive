@@ -8,6 +8,7 @@ Character::Character(int health, int speed,Weapon weapon)
     this->speed = speed;
     this->weapon = weapon;
 
+    // loading of the character's sprite
     if(!textureCharacter.loadFromFile("Media/spriteCharacter.png")){
             cout<<"Error loading sprite";
     }
@@ -72,15 +73,18 @@ Texture Character::getTextureCharacter()
     return textureCharacter;
 }
 
+// return the center of the character's sprite
 Vector2f Character::getCenterPosition(){
     return Vector2f(spriteCharacter.getPosition().x +28, spriteCharacter.getPosition().y+32);
 }
 
+// this method manages the character's movements
 void Character::keyboardAction()
 {
     enum Dir{Up, Left, Down, Right};
     Vector2i anim(1, Down);
 
+    // keyboard interaction for character's movement and sprite animation
     if(Keyboard::isKeyPressed(Keyboard::Z))
     {
         anim.y = Up;
@@ -102,6 +106,7 @@ void Character::keyboardAction()
         spriteCharacter.move(speed,0);
     }
 
+    // management of the map limits
     if(spriteCharacter.getPosition().x <=0)
         spriteCharacter.setPosition(Vector2f(0, spriteCharacter.getPosition().y));
     if(spriteCharacter.getPosition().y <=0)

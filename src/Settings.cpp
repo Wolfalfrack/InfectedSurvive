@@ -11,6 +11,7 @@ Settings::~Settings()
     //dtor
 }
 
+// this method creates the window from the setting's button, which let the user chooses the difficulty
 int Settings::runSettings()
 {
     RenderWindow window(VideoMode(600, 600), "Settings");
@@ -42,6 +43,7 @@ int Settings::runSettings()
         }
 
         if(timer > 5){
+            // keyboard interaction to increase or decrease the difficulty
             if(Keyboard::isKeyPressed(Keyboard::Q))
             {
                 timer = 0;

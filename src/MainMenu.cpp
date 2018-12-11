@@ -10,9 +10,10 @@ MainMenu::~MainMenu()
     //dtor
 }
 
+// this method creates the window of the main menu. It contains the music of the game
 void MainMenu::run()
 {
-    RenderWindow window(VideoMode(600, 600), "Survivor Infected");
+    RenderWindow window(VideoMode(600, 600), "Infected Survive");
 
     Menu menu(window.getSize().x,window.getSize().y);
     Music music;
@@ -36,14 +37,16 @@ void MainMenu::run()
     Text footer;
     if(!font.loadFromFile("Media/arial.ttf")){}
     footer.setFont(font);
+    footer.setScale(1,1);
     footer.setString("Press enter to confirm.");
-    footer.setPosition(180,550);
+    footer.setPosition(170,550);
     footer.setColor(Color::White);
 
     while (window.isOpen())
     {
         Event event;
 
+        // management of the keyboard interaction to switch between the different menus
         while (window.pollEvent(event))
         {
             switch(event.type)

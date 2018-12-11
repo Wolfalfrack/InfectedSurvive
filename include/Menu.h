@@ -8,12 +8,14 @@
 
 #include "Application.h";
 #include "Settings.h"
+#include "Details.h"
 
-#define MAX_NUMBER_OF_ITEMS 3
+#define MAX_NUMBER_OF_ITEMS 4
 
 using namespace std;
 using namespace sf;
 
+// this class manages the different button of the main menu
 class Menu
 {
     public:

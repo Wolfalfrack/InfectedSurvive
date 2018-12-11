@@ -11,6 +11,8 @@
 using namespace std;
 using namespace sf;
 
+
+// This class creates the bullets shot by the weapon of the character in the game
 class Bullet
 {
     public:

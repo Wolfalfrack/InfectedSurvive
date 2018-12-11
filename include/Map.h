@@ -7,7 +7,7 @@
 using namespace std;
 using namespace sf;
 
-
+// this class manages the sprite of the map / background of the game
 class Map
 {
     public:

@@ -3,6 +3,7 @@ using namespace std;
 
 Map::Map()
 {
+    // loading of the map's sprite
     if(!textureMap.loadFromFile("Media/map.png"))
     {
         cout<<"Error loading Map";

@@ -53,6 +53,7 @@
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/Bullet.h" />
 		<Unit filename="include/Character.h" />
+		<Unit filename="include/Details.h" />
 		<Unit filename="include/ListZombie.h" />
 		<Unit filename="include/MainMenu.h" />
 		<Unit filename="include/Map.h" />
@@ -64,6 +65,7 @@
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Bullet.cpp" />
 		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Details.cpp" />
 		<Unit filename="src/ListZombie.cpp" />
 		<Unit filename="src/MainMenu.cpp" />
 		<Unit filename="src/Map.cpp" />

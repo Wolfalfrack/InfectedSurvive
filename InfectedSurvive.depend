@@ -413,7 +413,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1544366999 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\main.cpp
+1544524644 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\main.cpp
 	<stdexcept>
 	<iostream>
 	"MainMenu.h"
@@ -489,10 +489,10 @@
 	"Munition.h"
 	"ListZombie.h"
 
-1544480242 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\zombie.cpp
+1544539442 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\zombie.cpp
 	"Zombie.h"
 
-1544479732 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\zombie.h
+1544537657 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\zombie.h
 	<string>
 	<sstream>
 	<iostream>
@@ -527,7 +527,7 @@
 
 1542033555 ter
 
-1544117696 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\application.h
+1544539939 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\application.h
 	"SFML\Graphics.hpp"
 	"SFML\Window.hpp"
 	"SFML\System.hpp"
@@ -540,16 +540,16 @@
 	"Bullet.h"
 	"ListZombie.h"
 
-1544366365 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\mainmenu.h
+1544529328 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\mainmenu.h
 	"Menu.h"
 
-1544480280 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\application.cpp
+1544532236 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\application.cpp
 	"Application.h"
 
 1544100016 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\arme.cpp
 	"Arme.h"
 
-1544480148 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\mainmenu.cpp
+1544531973 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\mainmenu.cpp
 	"MainMenu.h"
 
 1542106535 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\deplacementpersonnage.h
@@ -566,13 +566,13 @@
 1542367471 source:c:\users\nico-pc\desktop\helha 2018 - 2019\gitkraken\infectedsurvive\src\map.cpp
 	"Map.h"
 
-1542367912 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\map.h
+1544531676 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\map.h
 	<SFML/Graphics.hpp>
 	<string>
 	<sstream>
 	<iostream>
 
-1544480322 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\map.cpp
+1544529359 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\map.cpp
 	"Map.h"
 
 1544024360 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\munition.cpp
@@ -587,7 +587,7 @@
 	<cmath>
 	<vector>
 
-1544117610 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\listzombie.h
+1544532107 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\listzombie.h
 	"Zombie.h"
 
 1544117550 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\listzombie.cpp
@@ -596,7 +596,7 @@
 1544100554 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\bullet.cpp
 	"Bullet.h"
 
-1544100531 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\bullet.h
+1544532011 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\bullet.h
 	<string>
 	<sstream>
 	<iostream>
@@ -605,10 +605,10 @@
 	<cmath>
 	<vector>
 
-1544480255 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\weapon.cpp
+1544532673 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\weapon.cpp
 	"Weapon.h"
 
-1544480205 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\weapon.h
+1544532706 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\weapon.h
 	<string>
 	<sstream>
 	<iostream>
@@ -620,7 +620,7 @@
 	"Bullet.h"
 	"ListZombie.h"
 
-1544105385 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\character.h
+1544532015 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\character.h
 	<string>
 	<sstream>
 	<iostream>
@@ -628,19 +628,20 @@
 	<cmath>
 	"Weapon.h"
 
-1544480302 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\character.cpp
+1544531520 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\character.cpp
 	"Character.h"
 
-1544480122 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\menu.cpp
+1544531704 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\menu.cpp
 	"Menu.h"
 
-1544475484 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\menu.h
+1544532120 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\menu.h
 	"SFML\Graphics.hpp"
 	"SFML\Window.hpp"
 	"SFML\System.hpp"
 	"SFML\Audio.hpp"
 	"Application.h"
 	"Settings.h"
+	"Details.h"
 
 1544377098 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\option.cpp
 	"Option.h"
@@ -652,13 +653,23 @@
 	"SFML\Audio.hpp"
 	<iostream>
 
-1544380491 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\settings.h
+1544531913 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\settings.h
 	"SFML\Graphics.hpp"
 	"SFML\Window.hpp"
 	"SFML\System.hpp"
 	"SFML\Audio.hpp"
 	<iostream>
 
-1544480115 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\settings.cpp
+1544531999 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\settings.cpp
 	"Settings.h"
+
+1544539589 source:d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\src\details.cpp
+	"Details.h"
+
+1544532019 d:\data\documents\cours 2018 - 2019\git infectedsurvive\infectedsurvive\include\details.h
+	"SFML\Graphics.hpp"
+	"SFML\Window.hpp"
+	"SFML\System.hpp"
+	"SFML\Audio.hpp"
+	<iostream>
 

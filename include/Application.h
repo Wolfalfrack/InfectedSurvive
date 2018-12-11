@@ -13,7 +13,7 @@
 #include "ListZombie.h"
 
 
-
+// This class manages the entire game
 class Application
 {
     public:
@@ -32,6 +32,9 @@ class Application
         Vector2f aimDir;
         Vector2f aimDirNorm;
         RectangleShape hpBar;
+        Text text;
+        Text score;
+        Font font;
 };
 
 #endif // APPLICATION_H

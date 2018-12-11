@@ -2,6 +2,7 @@
 #define MAINMENU_H
 #include "Menu.h"
 
+// this class manage the main menu's windows and the keyboard interaction
 class MainMenu
 {
     public:

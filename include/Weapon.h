@@ -15,6 +15,7 @@
 using namespace std;
 using namespace sf;
 
+// this class manages a list of bullets and their interaction on the game
 class Weapon
 {
     public:

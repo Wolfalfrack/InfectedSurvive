@@ -1,5 +1,5 @@
-#ifndef SETTINGS_H
-#define SETTINGS_H
+#ifndef DETAILS_H
+#define DETAILS_H
 #include "SFML\Graphics.hpp"
 #include "SFML\Window.hpp"
 #include "SFML\System.hpp"
@@ -11,18 +11,17 @@ using namespace std;
 using namespace sf;
 
 
-// this class manages settings of the game
-class Settings
+// This class shows a windows with the informations about the developers
+class Details
 {
     public:
-        Settings();
-        virtual ~Settings();
-        int runSettings();
+        Details();
+        virtual ~Details();
 
+        void run();
     protected:
 
     private:
-        int difficulty;
 };
 
-#endif // SETTINGS_H
+#endif // DETAILS_H
